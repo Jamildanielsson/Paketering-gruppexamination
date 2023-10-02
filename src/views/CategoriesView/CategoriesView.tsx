@@ -1,9 +1,12 @@
-import './CategoriesView.scss'
+import Header from '../../components/Header/Header';
+import './CategoriesView.scss';
 
 function CategoriesView() {
   return (
-    <div>CategoriesView</div>
-  )
+    <div>
+      <Header />
+    </div>
+  );
 }
 
-export default CategoriesView
+export default CategoriesView;

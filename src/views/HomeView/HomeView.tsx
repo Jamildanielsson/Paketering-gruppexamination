@@ -1,9 +1,12 @@
-import './HomeView.scss'
+import './HomeView.scss';
+import Header from '../../components/Header/Header';
 
 function HomeView() {
   return (
-    <div>HomeView</div>
-  )
+    <div>
+      <Header />
+    </div>
+  );
 }
 
-export default HomeView
+export default HomeView;

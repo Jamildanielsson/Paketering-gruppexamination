@@ -1,0 +1,12 @@
+@import './sass/_fonts.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.App {
+  @include defaultFont;
+}
