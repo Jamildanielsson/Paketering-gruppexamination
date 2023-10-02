@@ -1,0 +1,25 @@
+@import '../../sass/colors';
+
+.input-wrapper{
+    background-color: $white;
+    border-radius: 10px;
+    height: 3rem;
+    padding: 0 15px;
+    box-shadow: 0 0 8 #ddd;
+    display: flex;
+    align-items: center;
+    margin-inline: 1rem;
+}
+
+input{
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    font-size: 1.25rem;
+    width: 100%;
+    margin-left: 5px;
+}
+
+input:focus{
+    outline: none;
+}
