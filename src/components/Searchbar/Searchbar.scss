@@ -23,3 +23,9 @@ input{
 input:focus{
     outline: none;
 }
+
+.searchResults li{
+    margin-inline: 2.7rem;
+    padding: .5rem;
+    font-size: 1.2rem;
+}

@@ -8,17 +8,17 @@ const Searchbar = () => {
   const [filteredData, setFilteredData] = useState<any>([]);
 
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (event:React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     setSearchTerm(value);
     filterData(value);
-    if(searchTerm === null ){
+    if(value === '' ){
       setFilteredData([])
     }
   };
 
 
-  const filterData = (searchTerm: any) => {
+  const filterData = (searchTerm) => {
     const filteredData = data.filter((item) =>
       item.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -31,11 +31,14 @@ const Searchbar = () => {
         <FaSearch id="SearchIcon" />
         <input placeholder="Sök" value={searchTerm} onChange={handleInputChange} />
       </div>
-      <ul>
+      <div className='searchResults'>
+         <ul>
         {filteredData.map((item) => (
           <li key={item.title}>{item.title}</li>
         ))}
       </ul>
+      </div>
+     
     </div>
   )
 }
