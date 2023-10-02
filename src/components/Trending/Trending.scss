@@ -1,20 +1,80 @@
-.trending-container {
+.carousel {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    margin: 0.5rem;
+    border: 2px solid black;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 85vh;
 }
 
 li {
+
     list-style-type: none;
-    padding: 2rem;
+    padding: 1rem;
 }
 
-.movie-img {
-    max-width: 12rem;
-    min-width: 10rem;
-}
-
-.image-synopsis-container {
+.slide {
     display: flex;
-    flex-direction: row;
-    
+    justify-content: center;
+    align-items: center;
+    max-width: 22rem;
+    min-width: 20rem;
+    border-radius: 6px;
+    box-shadow: 0px 0px 6px #666 ;
+    margin: 1rem;
+    padding: 0.5rem;
 }
+
+.slide-hidden {
+    display: none;
+}
+
+.trending-heading{
+    margin: 1rem;
+}
+
+.arrow {
+    position: absolute;
+    height: 4rem;
+    width: 4rem;
+    color: red;
+    filter: drop-shadow(0px 0px 10px #eee);
+}
+
+.arrow:hover{
+    cursor:pointer;
+    color: rgb(255, 121, 121);
+}
+
+.arrow-left {
+    left: 1rem;
+}
+.arrow-right {
+    right: 1rem
+}
+
+.indicators {
+    display: flex;
+    position: absolute;
+    bottom: 0.7rem;
+}
+
+.indicator {
+    background-color: red;
+    height: 0.6rem;
+    width: 0.6rem;
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 5px #555;
+    cursor: pointer;
+    margin: 0 0.2rem;
+}
+
+.indicator-inactive {
+    background-color: orange;
+}
+
