@@ -5,11 +5,13 @@ import MovieView from './views/MovieView/MovieView'
 import FavoritesView from './views/FavoritesView/FavoritesView'
 import CategoriesView from './views/CategoriesView/CategoriesView'
 
+import './App.css'
+
 function App() {
 
   const router = createBrowserRouter([
     {
-      path: '/paketering-gruppexamination/homeview/',
+      path: '/paketering-gruppexamination/',
       element: <HomeView />
     },
     {
