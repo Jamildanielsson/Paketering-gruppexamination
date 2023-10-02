@@ -1,0 +1,20 @@
+.trending-container {
+    display: flex;
+    flex-direction: row;
+}
+
+li {
+    list-style-type: none;
+    padding: 2rem;
+}
+
+.movie-img {
+    max-width: 12rem;
+    min-width: 10rem;
+}
+
+.image-synopsis-container {
+    display: flex;
+    flex-direction: row;
+    
+}
