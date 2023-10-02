@@ -1,9 +1,12 @@
-import './FavoritesView.scss'
+import Header from '../../components/Header/Header';
+import './FavoritesView.scss';
 
 function FavoritesView() {
   return (
-    <div>FavoritesView</div>
-  )
+    <div>
+      <Header />
+    </div>
+  );
 }
 
-export default FavoritesView
+export default FavoritesView;

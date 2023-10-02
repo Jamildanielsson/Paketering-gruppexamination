@@ -1,9 +1,12 @@
-import './MovieView.scss'
+import Header from '../../components/Header/Header';
+import './MovieView.scss';
 
 function MovieView() {
   return (
-    <div>MovieView</div>
-  )
+    <div>
+      <Header />
+    </div>
+  );
 }
 
-export default MovieView
+export default MovieView;
