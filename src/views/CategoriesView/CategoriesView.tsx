@@ -5,6 +5,7 @@ function CategoriesView() {
   return (
     <div>
       <Header />
+      Categories
     </div>
   );
 }

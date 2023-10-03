@@ -5,6 +5,7 @@ function FavoritesView() {
   return (
     <div>
       <Header />
+      Favorites
     </div>
   );
 }

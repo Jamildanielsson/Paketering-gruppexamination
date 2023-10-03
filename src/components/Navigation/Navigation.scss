@@ -1,0 +1,35 @@
+.navigation {
+  position: absolute;
+  color: white;
+  top: 3.7rem;
+  width: 50vw;
+  right: 0;
+  z-index: 1;
+  background-color: black;
+  max-width: 600px;
+  border-radius: 0px 0px 0px 10px;
+
+  &__links {
+    list-style-type: none;
+  }
+
+  &__link {
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 1rem;
+    text-transform: uppercase;
+
+    &:not(:first-child) {
+      border-top: 1px solid rgb(45, 45, 45);
+    }
+
+    &:last-child {
+      border-radius: 0px 0px 0px 10px;
+    }
+
+    &:hover {
+      background-color: rgb(41, 41, 41);
+      cursor: pointer;
+    }
+  }
+}
