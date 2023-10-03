@@ -8,19 +8,19 @@ import CategoriesView from './views/CategoriesView/CategoriesView';
 function App() {
   const router = createBrowserRouter([
     {
-      path: '/paketering-gruppexamination/',
+      path: '/Paketering-gruppexamination/',
       element: <HomeView />,
     },
     {
-      path: '/paketering-gruppexamination/movieview/',
+      path: '/Paketering-gruppexamination/movieview/',
       element: <MovieView />,
     },
     {
-      path: '/paketering-gruppexamination/favoritesview/',
+      path: '/Paketering-gruppexamination/favoritesview/',
       element: <FavoritesView />,
     },
     {
-      path: '/paketering-gruppexamination/categoriesview/',
+      path: '/Paketering-gruppexamination/categoriesview/',
       element: <CategoriesView />,
     },
   ]);
