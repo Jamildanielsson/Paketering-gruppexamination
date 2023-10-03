@@ -18,15 +18,13 @@ function Trending() {
   return (
     <div className='carousel'>
       <h1>Trending:</h1>
-      <BsArrowLeftCircleFill className='arrow arrow-left' onClick={prevSlide} />
+      <BsArrowLeftCircleFill className='arrow arrow-left' onClick={prevSlide} data-testid='arrow'/>
       {isTrendingComp.map((movie: MovieData, index) => {
         return (
-        <>
-          <img key={index} className={slide === index ? "slide" : "slide slide-hidden"} src={movie.thumbnail} alt='Movie-thumbnail' />
-        </>
+          <img key={index} className={slide === index ? "slide" : "slide slide-hidden"} src={movie.thumbnail} alt={'Movie-thumbnail: ' + index} />
         )
       })}
-      <BsArrowRightCircleFill className='arrow arrow-right' onClick={nextSlide} />
+      <BsArrowRightCircleFill className='arrow arrow-right' onClick={nextSlide} data-testid='arrow'/>
       <span className='indicators'>{isTrendingComp.map((_, index) => {
         return (<button key={index} className={slide === index ? "indicator" : "indicator indicator-inactive"} onClick={() => setSlide(index)}></button>)
       })}</span>
