@@ -21,9 +21,7 @@ function Trending() {
       <BsArrowLeftCircleFill className='arrow arrow-left' onClick={prevSlide} />
       {isTrendingComp.map((movie: MovieData, index) => {
         return (
-        <>
           <img key={index} className={slide === index ? "slide" : "slide slide-hidden"} src={movie.thumbnail} alt='Movie-thumbnail' />
-        </>
         )
       })}
       <BsArrowRightCircleFill className='arrow arrow-right' onClick={nextSlide} />
