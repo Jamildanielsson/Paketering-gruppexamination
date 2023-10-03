@@ -6,7 +6,7 @@ function HomeView() {
   return (
     <div>
       <Header />
-      {/* <Trending /> */}
+      <Trending />
     </div>
   );
 }
