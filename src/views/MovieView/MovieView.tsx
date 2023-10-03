@@ -5,6 +5,7 @@ function MovieView() {
   return (
     <div>
       <Header />
+      Movie
     </div>
   );
 }
