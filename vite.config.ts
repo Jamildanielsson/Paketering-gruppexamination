@@ -4,5 +4,9 @@ import react from '@vitejs/plugin-react-swc'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/Paketering-gruppexamination/"
+  test: {
+    global: true,
+    environment: 'jsdom',
+  },
+  
 })
