@@ -9,7 +9,9 @@ function HomeView() {
     <div>
       <Header />
       <Searchbar/>
+      <h1 className='home-heading'>Trending:</h1>
       <Trending />
+      <h1 className='home-heading'>Recommended:</h1>
       <Recommended />
     </div>
   );

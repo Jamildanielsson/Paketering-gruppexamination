@@ -5,7 +5,7 @@ const initialState: ILatestMovie = {
 };
 
 const latestMovieSlice = createSlice({
-  name: 'latestMovie',
+  name: 'movie',
   initialState,
   reducers: {
     setLatestMovie: (state, action: PayloadAction<ILatestMovie>) => {

@@ -10,7 +10,7 @@ function Navigation({ isOpen }: INavigationProps) {
         <ul className='navigation__links'>
           {/* HOME */}
           <li
-            onClick={() => navigate('/paketering-gruppexamination/')}
+            onClick={() => navigate('/Paketering-gruppexamination/')}
             className='navigation__link'
           >
             Home
@@ -18,7 +18,7 @@ function Navigation({ isOpen }: INavigationProps) {
 
           {/* MOVIE */}
           <li
-            onClick={() => navigate('/paketering-gruppexamination/movieview/')}
+            onClick={() => navigate('/Paketering-gruppexamination/movieview/')}
             className='navigation__link'
           >
             Movie
@@ -27,7 +27,7 @@ function Navigation({ isOpen }: INavigationProps) {
           {/* FAVORITES */}
           <li
             onClick={() =>
-              navigate('/paketering-gruppexamination/favoritesview/')
+              navigate('/Paketering-gruppexamination/favoritesview/')
             }
             className='navigation__link'
           >
@@ -37,7 +37,7 @@ function Navigation({ isOpen }: INavigationProps) {
           {/* CATEGORIES */}
           <li
             onClick={() =>
-              navigate('/paketering-gruppexamination/categoriesview/')
+              navigate('/Paketering-gruppexamination/categoriesview/')
             }
             className='navigation__link'
           >
