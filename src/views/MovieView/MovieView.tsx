@@ -30,7 +30,7 @@ function MovieView() {
       <Header />
       <section className='movie-view__card'>
         <div className='movie-view__card__container'>
-          <div>
+          <div className='movie-view__card__container__thumbnail'>
             <img
               className='movie-view__card__container__thumbnailIMG'
               src={testMovie.thumbnail}
@@ -38,38 +38,39 @@ function MovieView() {
             />
           </div>
           <div className='movie-view__card__container__info'>
-            <h1 className='movie-view__card__container__title'>
-              {testMovie.title}
-            </h1>
-            <p className='movie-view__synopsis'>{testMovie.synopsis}</p>
-           
-            <h3 className='movie-view__card__container__year'>
-              {testMovie.year}, {testMovie.genre}
-            </h3>
-            <h3 className='movie-view__card__container__actors'>
-              {testMovie.actors.join(', ')}
-            </h3>
-            <h3 className='movie-view__card__container__rating'>
-              {testMovie.rating}
-            </h3>
-            {isFavorited ? (
-              <button
-                className='movie-view__delete-button'
-                onClick={() => removeFromFavorites()}
-              >
-                Remove from Favorites
-              </button>
-            ) : (
-              <button
-                className='movie-view__add-button'
-                onClick={() => addToFavories()}
-              >
-                Add to Favorites
-              </button>
-            )}
+            <div className='movie-view__card__container__main-info'>
+              <h1 className='movie-view__card__container__title'>
+                {testMovie.title}
+              </h1>
+              <div className='movie-view__card__container__year'>
+                <p>
+                  {testMovie.year} | {testMovie.genre} | {testMovie.rating}
+                </p>
+              </div>
+              <h4 className='movie-view__card__container__actors'>
+                {testMovie.actors.join(', ')}
+              </h4>
+            </div>
+            <div className='movie-view__card__container__synopsis'>
+              <p className='movie-view__synopsis'>{testMovie.synopsis}</p>
+              {isFavorited ? (
+                <button
+                  className='movie-view__delete-button'
+                  onClick={() => removeFromFavorites()}
+                >
+                  Remove from Favorites
+                </button>
+              ) : (
+                <button
+                  className='movie-view__add-button'
+                  onClick={() => addToFavories()}
+                >
+                  Add to Favorites
+                </button>
+              )}
+            </div>
           </div>
         </div>
-       
       </section>
     </div>
   );
