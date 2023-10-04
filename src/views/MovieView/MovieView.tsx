@@ -2,8 +2,8 @@ import Header from '../../components/Header/Header';
 import './MovieView.scss';
 import { RootState } from '../../redux/store';
 import { useSelector } from 'react-redux';
-import allMoviesData from '../../assets/movies.json';
 import { useEffect, useState } from 'react';
+import { findMovie } from '../../utils/findMovie';
 
 function MovieView() {
   const isFavorited: boolean = false;
@@ -14,13 +14,7 @@ function MovieView() {
   );
 
   useEffect(() => {
-    function findMovie() {
-      const foundMovie = allMoviesData.find(
-        (movie) => movie.title === latestClickedMovie
-      );
-      setMovie(foundMovie);
-    }
-    findMovie();
+    setMovie(findMovie(latestClickedMovie));
   }, [latestClickedMovie]);
 
   function addToFavorites() {
