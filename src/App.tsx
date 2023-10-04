@@ -5,29 +5,34 @@ import MovieView from './views/MovieView/MovieView';
 import FavoritesView from './views/FavoritesView/FavoritesView';
 import CategoriesView from './views/CategoriesView/CategoriesView';
 
+import store from './redux/store';
+import { Provider } from 'react-redux';
+
 function App() {
   const router = createBrowserRouter([
     {
-      path: '/paketering-gruppexamination/',
+      path: '/Paketering-gruppexamination/',
       element: <HomeView />,
     },
     {
-      path: '/paketering-gruppexamination/movieview/',
+      path: '/Paketering-gruppexamination/movieview/',
       element: <MovieView />,
     },
     {
-      path: '/paketering-gruppexamination/favoritesview/',
+      path: '/Paketering-gruppexamination/favoritesview/',
       element: <FavoritesView />,
     },
     {
-      path: '/paketering-gruppexamination/categoriesview/',
+      path: '/Paketering-gruppexamination/categoriesview/',
       element: <CategoriesView />,
     },
   ]);
 
   return (
     <div className='App'>
-      <RouterProvider router={router} />
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
     </div>
   );
 }
