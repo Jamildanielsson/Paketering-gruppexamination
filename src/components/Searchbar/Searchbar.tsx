@@ -2,11 +2,10 @@ import './Searchbar.scss';
 import { FaSearch } from 'react-icons/fa';
 import data from '../../assets/movies.json';
 import { useState } from 'react';
-
 import { useDispatch } from 'react-redux';
-import { setLatestMovie } from '../../redux/latestMovieSlice';
 import { AppDispatch } from '../../redux/store';
 import { useNavigate } from 'react-router-dom';
+import { getClickedMovieAndNavigate } from '../../utils/getClickedMovieAndNavigate';
 
 const Searchbar = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -31,11 +30,6 @@ const Searchbar = () => {
     setFilteredData(filteredData);
   };
 
-  function handleMovieClick(movieTitle: string) {
-    dispatch(setLatestMovie({ latestMovie: movieTitle }));
-    navigate('/paketering-gruppexamination/movieview/');
-  }
-
   return (
     <div className='Searchbar'>
       <div className='input-wrapper'>
@@ -49,7 +43,12 @@ const Searchbar = () => {
       <div className='searchResults'>
         <ul>
           {filteredData.map((item) => (
-            <li key={item.title} onClick={() => handleMovieClick(item.title)}>
+            <li
+              key={item.title}
+              onClick={() =>
+                getClickedMovieAndNavigate(item.title, navigate, dispatch)
+              }
+            >
               <img src={item.thumbnail} height='100rem' />
               {item.title}
             </li>
