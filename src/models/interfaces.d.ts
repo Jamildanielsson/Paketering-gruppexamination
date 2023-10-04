@@ -18,3 +18,7 @@ interface IHamburgerProps {
 interface INavigationProps {
   isOpen: boolean;
 }
+
+interface ILatestMovie {
+  latestMovie: string;
+}
