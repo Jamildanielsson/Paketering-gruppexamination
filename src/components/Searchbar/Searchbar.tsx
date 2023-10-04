@@ -4,15 +4,15 @@ import data from '../../assets/movies.json'
 import { useState } from 'react';
 
 const Searchbar = () => {
-  const [searchTerm, setSearchTerm] = useState<any>('');
+  const [searchTerm, setSearchTerm] = useState<string>('');
   const [filteredData, setFilteredData] = useState<any>([]);
 
 
-  const handleInputChange = (event:React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     setSearchTerm(value);
     filterData(value);
-    if(value === '' ){
+    if (value === '') {
       setFilteredData([])
     }
   };
@@ -32,13 +32,13 @@ const Searchbar = () => {
         <input placeholder="Sök" value={searchTerm} onChange={handleInputChange} />
       </div>
       <div className='searchResults'>
-         <ul>
-        {filteredData.map((item) => (
-          <li key={item.title}>{item.title}</li>
-        ))}
-      </ul>
+        <ul>
+          {filteredData.map((item) => (
+            <li key={item.title} onClick={() => {console.log(item.title)}}>{item.title}</li>
+          ))}
+        </ul>
       </div>
-     
+
     </div>
   )
 }
