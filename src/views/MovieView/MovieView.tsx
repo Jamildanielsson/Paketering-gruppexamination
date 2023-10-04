@@ -28,7 +28,6 @@ function MovieView() {
   return (
     <div className='movie-view'>
       <Header />
-
       <section className='movie-view__card'>
         <div className='movie-view__card__container'>
           <div>
@@ -42,6 +41,8 @@ function MovieView() {
             <h1 className='movie-view__card__container__title'>
               {testMovie.title}
             </h1>
+            <p className='movie-view__synopsis'>{testMovie.synopsis}</p>
+           
             <h3 className='movie-view__card__container__year'>
               {testMovie.year}, {testMovie.genre}
             </h3>
@@ -51,26 +52,24 @@ function MovieView() {
             <h3 className='movie-view__card__container__rating'>
               {testMovie.rating}
             </h3>
+            {isFavorited ? (
+              <button
+                className='movie-view__delete-button'
+                onClick={() => removeFromFavorites()}
+              >
+                Remove from Favorites
+              </button>
+            ) : (
+              <button
+                className='movie-view__add-button'
+                onClick={() => addToFavories()}
+              >
+                Add to Favorites
+              </button>
+            )}
           </div>
         </div>
-
-        <p className='movie-view__synopsis'>{testMovie.synopsis}</p>
-
-        {isFavorited ? (
-          <button
-            className='movie-view__delete-button'
-            onClick={() => removeFromFavorites()}
-          >
-            Remove from Favorites
-          </button>
-        ) : (
-          <button
-            className='movie-view__add-button'
-            onClick={() => addToFavories()}
-          >
-            Add to Favorites
-          </button>
-        )}
+       
       </section>
     </div>
   );

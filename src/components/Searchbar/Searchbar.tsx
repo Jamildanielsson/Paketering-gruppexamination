@@ -1,6 +1,6 @@
-import './Searchbar.scss'
-import { FaSearch } from "react-icons/fa"
-import data from '../../assets/movies.json'
+import './Searchbar.scss';
+import { FaSearch } from 'react-icons/fa';
+import data from '../../assets/movies.json';
 import { useState } from 'react';
 
 const Searchbar = () => {
@@ -13,7 +13,7 @@ const Searchbar = () => {
     setSearchTerm(value);
     filterData(value);
     if (value === '') {
-      setFilteredData([])
+      setFilteredData([]);
     }
   };
 
@@ -27,14 +27,14 @@ const Searchbar = () => {
 
   return (
     <div className='Searchbar'>
-      <div className="input-wrapper">
-        <FaSearch id="SearchIcon" />
-        <input placeholder="Search movie on title?" value={searchTerm} onChange={handleInputChange} />
+      <div className='input-wrapper'>
+        <FaSearch id='SearchIcon' />
+        <input placeholder='Search movie on title?' value={searchTerm} onChange={handleInputChange} />
       </div>
       <div className='searchResults'>
         <ul>
           {filteredData.map((item) => (
-            <li key={item.title} onClick={() => {console.log(item.title)}}><img src={item.thumbnail} height='100rem'/>{item.title}</li>
+            <li key={item.title} onClick={() => { console.log(item.title) }}><img src={item.thumbnail} height='100rem' />{item.title}</li>
           ))}
         </ul>
       </div>
