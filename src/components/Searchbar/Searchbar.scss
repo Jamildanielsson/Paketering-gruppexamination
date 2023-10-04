@@ -3,12 +3,12 @@
 .input-wrapper{
     background-color: $white;
     border-radius: 10px;
-    height: 3rem;
-    padding: 0 15px;
+    padding: 1rem;
     box-shadow: 0 0 8 #ddd;
     display: flex;
     align-items: center;
     margin-inline: 1rem;
+    margin-top: .5rem;
 }
 
 input{
@@ -17,7 +17,6 @@ input{
     height: 100%;
     font-size: 1.25rem;
     width: 100%;
-    margin-left: 5px;
 }
 
 input:focus{
@@ -25,7 +24,24 @@ input:focus{
 }
 
 .searchResults li{
-    margin-inline: 2.7rem;
+    margin-inline: 1rem;
     padding: .5rem;
-    font-size: 1.2rem;
+    font-size: 1.22rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer; 
+}
+
+.searchResults li img{
+ margin-right: 1rem;
+}
+
+.searchResults li:hover{
+    background-color: rgb(220, 220, 220);
+    border-radius: 2px;
+}
+
+#SearchIcon{
+    font-size: 1.5rem;
+    margin-right: 1rem;
 }

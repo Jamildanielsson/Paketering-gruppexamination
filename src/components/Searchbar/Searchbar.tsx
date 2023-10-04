@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 const Searchbar = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
-  const [filteredData, setFilteredData] = useState<any>([]);
+  const [filteredData, setFilteredData] = useState<MovieData[]>([]);
 
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,7 +18,7 @@ const Searchbar = () => {
   };
 
 
-  const filterData = (searchTerm) => {
+  const filterData = (searchTerm: string) => {
     const filteredData = data.filter((item) =>
       item.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -29,12 +29,12 @@ const Searchbar = () => {
     <div className='Searchbar'>
       <div className="input-wrapper">
         <FaSearch id="SearchIcon" />
-        <input placeholder="Sök" value={searchTerm} onChange={handleInputChange} />
+        <input placeholder="Search movie on title?" value={searchTerm} onChange={handleInputChange} />
       </div>
       <div className='searchResults'>
         <ul>
           {filteredData.map((item) => (
-            <li key={item.title} onClick={() => {console.log(item.title)}}>{item.title}</li>
+            <li key={item.title} onClick={() => {console.log(item.title)}}><img src={item.thumbnail} height='100rem'/>{item.title}</li>
           ))}
         </ul>
       </div>
