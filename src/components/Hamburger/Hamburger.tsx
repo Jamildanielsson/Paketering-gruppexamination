@@ -1,9 +1,6 @@
-import { useState } from 'react';
 import './Hamburger.scss';
 
-function Hamburger() {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-
+function Hamburger({ isOpen, setIsOpen }: IHamburgerProps) {
   return (
     <section
       className={`hamburger-menu ${isOpen ? 'hamburger-menu--open' : ''}`}
