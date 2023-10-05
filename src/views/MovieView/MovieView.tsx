@@ -1,12 +1,14 @@
 import Header from '../../components/Header/Header';
 import './MovieView.scss';
-import { RootState } from '../../redux/store';
-import { useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../../redux/store';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { findMovie } from '../../utils/findMovie';
+import { favoriteClickHandler } from '../../utils/favoriteClickHandler';
 
 function MovieView() {
-  const isFavorited: boolean = false;
+  const dispatch: AppDispatch = useDispatch();
+  const favorites = useSelector((state: RootState) => state.favorites);
   const [movie, setMovie] = useState<MovieData | undefined>(undefined);
 
   const latestClickedMovie: string = useSelector(
@@ -16,14 +18,6 @@ function MovieView() {
   useEffect(() => {
     setMovie(findMovie(latestClickedMovie));
   }, [latestClickedMovie]);
-
-  function addToFavorites() {
-    // TODO: Add the movie to favorites...
-  }
-
-  function removeFromFavorites() {
-    // TODO: Remove the movie from favorites...
-  }
 
   return (
     <div className='movie-view'>
@@ -45,7 +39,7 @@ function MovieView() {
                   {movie.title}
                 </h1>
                 <p className='movie-view__card__container__year'>
-                  {movie.year} | {movie.genre} |  {movie.rating}
+                  {movie.year} | {movie.genre} | {movie.rating}
                 </p>
                 <h4 className='movie-view__card__container__actors'>
                   {movie.actors.join(', ')}
@@ -53,35 +47,24 @@ function MovieView() {
               </div>
               <div>
                 <p className='movie-view__synopsis'>{movie.synopsis}</p>
-
-                {isFavorited ? (
-                  <button
-                    className='movie-view__delete-button'
-                    onClick={() => removeFromFavorites()}
-                  >
-                    Remove from Favorites
-                  </button>
-                ) : (
-                  <button
-                    className='movie-view__add-button'
-                    onClick={() => addToFavorites()}
-                  >
-                    Add to Favorites
-                  </button>
-                )}
+                <button
+                  className='movie-view__add-and-delete-button'
+                  onClick={() =>
+                    favoriteClickHandler(movie.title, favorites, dispatch)
+                  }
+                >
+                  {favorites.includes(movie.title)
+                    ? 'Remove from favorites'
+                    : 'Add to favorites'}
+                </button>
               </div>
             </div>
           </div>
         </section>
       ) : (
-        '' // Todo: Fixa någon snygg placeholder...
-
+        '' // Todo: Fixa någon snygg om det möjligtvis skulle crasha!
       )}
-
-
-
-
-    </div >
+    </div>
   );
 }
 
