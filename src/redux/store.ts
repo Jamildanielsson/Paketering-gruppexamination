@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import latestMovieReducer from './latestMovieSlice';
+import favoritesReducer from './favoritesSlice';
 
 const store = configureStore({
   reducer: {
-    lastestMovie: latestMovieReducer,
+    lastestMovie: latestMovieReducer, // string.
+    favorites: favoritesReducer, // [].
   },
 });
 
