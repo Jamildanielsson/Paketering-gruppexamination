@@ -31,7 +31,7 @@ $medium: 900px;
   max-width: 50%;
   margin: .2rem;
   @media screen and (max-width: $medium) {
-    margin-left: 1rem;
+    margin-left: 0rem;
   }
 }
 
@@ -70,6 +70,9 @@ $medium: 900px;
   -webkit-user-select: none;
   touch-action: manipulation;
    max-width: 50%;
+   @media screen and (max-width: $medium) {
+    margin-left: 0rem;
+  }
 }
 
 &__delete-button:disabled {
@@ -95,6 +98,21 @@ $medium: 900px;
         align-items: center;
         text-align: left;
     }
+    &__year p{
+      margin-left: 10rem;
+      padding: 0;
+    }
+    &__thumbnail{
+      grid-column: 1/2;
+      @media screen and (max-width: $medium) {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+    }
+    }
+    &__thumbnailIMG{
+     max-width: 30rem;
+    }
       &__title {
         font-size: 3rem;
         @media screen and (max-width: $medium) {
@@ -107,6 +125,7 @@ $medium: 900px;
         font-size: 1.3rem;
         @media screen and (max-width: $medium) {
           font-size: 1rem;
+          margin-left: 0;
       }
       }
       &__info{
@@ -114,18 +133,17 @@ $medium: 900px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        margin-left: 2rem;
+        @media screen and (max-width: $medium) {
+        margin-left: 0;
+      }
       }
       &__info p{
         font-size: 1rem;
         margin-bottom: 1.3rem;
         margin: 1rem;
+        margin-left: 0;
       }
-      &__main-info p{
-        @media screen and (max-width: $medium) {
-          margin-left: 0rem;
-          padding: 0rem;
-      }
-    }
     }
   }
 }

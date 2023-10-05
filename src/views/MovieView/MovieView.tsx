@@ -32,7 +32,7 @@ function MovieView() {
       {movie ? (
         <section className='movie-view__card'>
           <div className='movie-view__card__container'>
-            <div>
+            <div className='movie-view__card__container__thumbnail'>
               <img
                 className='movie-view__card__container__thumbnailIMG'
                 src={movie.thumbnail}
@@ -40,43 +40,48 @@ function MovieView() {
               />
             </div>
             <div className='movie-view__card__container__info'>
-              <h1 className='movie-view__card__container__title'>
-                {movie.title}
-              </h1>
-              <h3 className='movie-view__card__container__year'>
-                {movie.year}, {movie.genre}
-              </h3>
-              <h3 className='movie-view__card__container__actors'>
-                {movie.actors.join(', ')}
-              </h3>
-              <h3 className='movie-view__card__container__rating'>
-                {movie.rating}
-              </h3>
+              <div className='movie-view__card__container__main-info'>
+                <h1 className='movie-view__card__container__title'>
+                  {movie.title}
+                </h1>
+                <p className='movie-view__card__container__year'>
+                  {movie.year} | {movie.genre} |  {movie.rating}
+                </p>
+                <h4 className='movie-view__card__container__actors'>
+                  {movie.actors.join(', ')}
+                </h4>
+              </div>
+              <div>
+                <p className='movie-view__synopsis'>{movie.synopsis}</p>
+
+                {isFavorited ? (
+                  <button
+                    className='movie-view__delete-button'
+                    onClick={() => removeFromFavorites()}
+                  >
+                    Remove from Favorites
+                  </button>
+                ) : (
+                  <button
+                    className='movie-view__add-button'
+                    onClick={() => addToFavorites()}
+                  >
+                    Add to Favorites
+                  </button>
+                )}
+              </div>
             </div>
           </div>
-
-          <p className='movie-view__synopsis'>{movie.synopsis}</p>
-
-          {isFavorited ? (
-            <button
-              className='movie-view__delete-button'
-              onClick={() => removeFromFavorites()}
-            >
-              Remove from Favorites
-            </button>
-          ) : (
-            <button
-              className='movie-view__add-button'
-              onClick={() => addToFavorites()}
-            >
-              Add to Favorites
-            </button>
-          )}
         </section>
       ) : (
         '' // Todo: Fixa någon snygg placeholder...
+
       )}
-    </div>
+
+
+
+
+    </div >
   );
 }
 
