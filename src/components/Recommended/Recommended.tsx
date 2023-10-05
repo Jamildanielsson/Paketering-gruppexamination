@@ -2,13 +2,17 @@ import './Recommended.scss';
 import Movies from '../../assets/movies.json';
 import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AppDispatch } from '../../redux/store';
-import { useDispatch } from 'react-redux';
+import { AppDispatch, RootState } from '../../redux/store';
+import { useDispatch, useSelector } from 'react-redux';
 import { getClickedMovieAndNavigate } from '../../utils/getClickedMovieAndNavigate';
+import isFavoritePNG from '../../assets/images/favourite-filled.png';
+import isNotFavoritePNG from '../../assets/images/favourite-not-filled.png';
+import { favoriteClickHandler } from '../../utils/favoriteClickHandler';
 
 function Recommended() {
   const navigate = useNavigate();
   const dispatch: AppDispatch = useDispatch();
+  const favorites = useSelector((state: RootState) => state.favorites);
 
   const isNotTrendingComp = Movies.filter(
     (movie: MovieData) => !movie.isTrending
@@ -114,15 +118,33 @@ function Recommended() {
           <div className='image-list' ref={imageListRef}>
             {isNotTrendingComp.map((movie: MovieData, index: number) => {
               return (
-                <img
-                  onClick={() =>
-                    getClickedMovieAndNavigate(movie.title, navigate, dispatch)
-                  }
-                  className='image-item'
-                  key={index}
-                  src={movie.thumbnail}
-                  alt={`Movie ${index}`}
-                />
+                <div className='rec-card'>
+                  <div className='blur-container'></div>
+                  <img
+                    className='favoritePNG'
+                    onClick={() =>
+                      favoriteClickHandler(movie.title, favorites, dispatch)
+                    }
+                    src={
+                      favorites.includes(movie.title)
+                        ? isFavoritePNG
+                        : isNotFavoritePNG
+                    }
+                  />
+                  <img
+                    onClick={() =>
+                      getClickedMovieAndNavigate(
+                        movie.title,
+                        navigate,
+                        dispatch
+                      )
+                    }
+                    className='image-item'
+                    key={index}
+                    src={movie.thumbnail}
+                    alt={`Movie ${index}`}
+                  />
+                </div>
               );
             })}
           </div>
