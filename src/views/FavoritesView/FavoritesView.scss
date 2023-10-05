@@ -120,3 +120,23 @@ $small: 300px;
 .favorites-actors {
     margin: 0.2rem;
 }
+
+.favorites__section-flex {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    @media screen and (max-width: $medium) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+}
+
+.favorites-empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
