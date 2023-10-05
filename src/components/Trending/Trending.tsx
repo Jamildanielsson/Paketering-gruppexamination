@@ -1,14 +1,19 @@
 import './Trending.scss';
 import Movies from '../../assets/movies.json';
 import { useEffect, useRef } from 'react';
-import { AppDispatch } from '../../redux/store';
+import { AppDispatch, RootState } from '../../redux/store';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getClickedMovieAndNavigate } from '../../utils/getClickedMovieAndNavigate';
+import isFavoritePNG from '../../assets/images/favourite-filled.png';
+import isNotFavoritePNG from '../../assets/images/favourite-not-filled.png';
+import { favoriteClickHandler } from '../../utils/favoriteClickHandler';
 
 function Trending() {
   const navigate = useNavigate();
   const dispatch: AppDispatch = useDispatch();
+  const favorites = useSelector((state: RootState) => state.favorites);
+
   const isNotTrendingComp = Movies.filter(
     (movie: MovieData) => movie.isTrending
   );
@@ -100,11 +105,6 @@ function Trending() {
     });
   };
 
-  // function handleMovieClick(movieTitle: string) {
-  //   dispatch(setLatestMovie({ latestMovie: movieTitle }));
-  //   navigate('/paketering-gruppexamination/movieview/');
-  // }
-
   return (
     <div className='megabody-t'>
       <div className='container-t'>
@@ -118,15 +118,33 @@ function Trending() {
           <div className='image-list-t' ref={imageListRef}>
             {isNotTrendingComp.map((movie: MovieData, index: number) => {
               return (
-                <img
-                  onClick={() =>
-                    getClickedMovieAndNavigate(movie.title, navigate, dispatch)
-                  }
-                  className='image-item-t'
-                  key={index}
-                  src={movie.thumbnail}
-                  alt={`Movie ${index}`}
-                />
+                <div className='rec-card'>
+                  <div className='blur-container'></div>
+                  <img
+                    className='favoritePNG'
+                    onClick={() =>
+                      favoriteClickHandler(movie.title, favorites, dispatch)
+                    }
+                    src={
+                      favorites.includes(movie.title)
+                        ? isFavoritePNG
+                        : isNotFavoritePNG
+                    }
+                  />
+                  <img
+                    onClick={() =>
+                      getClickedMovieAndNavigate(
+                        movie.title,
+                        navigate,
+                        dispatch
+                      )
+                    }
+                    className='image-item-t'
+                    key={index}
+                    src={movie.thumbnail}
+                    alt={`Movie ${index}`}
+                  />
+                </div>
               );
             })}
           </div>
