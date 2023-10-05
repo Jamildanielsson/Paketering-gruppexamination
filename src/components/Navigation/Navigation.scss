@@ -1,3 +1,6 @@
+@import '../../sass/colors';
+@import '../../sass/fonts';
+
 .navigation {
   position: absolute;
   color: white;
@@ -18,6 +21,12 @@
     font-size: 1.1rem;
     padding: 1rem;
     text-transform: uppercase;
+
+    &__favorite-number {
+      color: rgb(255, 255, 92);
+      @include NothingYouCouldDoFont;
+      font-size: 1.5rem;
+    }
 
     &:not(:first-child) {
       border-top: 1px solid rgb(45, 45, 45);
