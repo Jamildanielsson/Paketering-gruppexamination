@@ -1,3 +1,40 @@
+.favoritePNG {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 1.8rem;
+  z-index: 3;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}
+
+.blur-container {
+  position: relative;
+  background-color: #ffffff;
+  z-index: 1;
+  filter: blur(3px);
+}
+
+.blur-container::before {
+  content: '';
+  border-radius: 50px;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 55px;
+  height: 55px;
+  background-color: inherit;
+}
+
+.rec-card {
+  position: relative;
+  grid-row: 1;
+}
+
 .slider-wrapper .image-list {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
