@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { getClickedMovieAndNavigate } from '../../utils/getClickedMovieAndNavigate';
 
-function Recommended() {
+function Trending() {
   const navigate = useNavigate();
   const dispatch: AppDispatch = useDispatch();
   const isNotTrendingComp = Movies.filter(
@@ -147,4 +147,4 @@ function Recommended() {
   );
 }
 
-export default Recommended;
+export default Trending;
