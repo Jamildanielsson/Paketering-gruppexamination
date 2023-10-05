@@ -1,8 +1,11 @@
+import { useSelector } from 'react-redux';
 import './Navigation.scss';
 import { useNavigate } from 'react-router-dom';
+import { RootState } from '../../redux/store';
 
 function Navigation({ isOpen }: INavigationProps) {
   const navigate = useNavigate();
+  const favorites = useSelector((state: RootState) => state.favorites);
 
   return (
     <nav className='navigation'>
@@ -16,14 +19,6 @@ function Navigation({ isOpen }: INavigationProps) {
             Home
           </li>
 
-          {/* MOVIE */}
-          <li
-            onClick={() => navigate('/Paketering-gruppexamination/movieview/')}
-            className='navigation__link'
-          >
-            Movie
-          </li>
-
           {/* FAVORITES */}
           <li
             onClick={() =>
@@ -31,7 +26,11 @@ function Navigation({ isOpen }: INavigationProps) {
             }
             className='navigation__link'
           >
-            Favorites
+            Favorites ({' '}
+            <span className='navigation__link__favorite-number'>
+              {favorites.length}
+            </span>{' '}
+            )
           </li>
 
           {/* CATEGORIES */}
