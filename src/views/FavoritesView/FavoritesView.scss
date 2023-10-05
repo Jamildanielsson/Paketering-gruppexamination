@@ -1,0 +1,20 @@
+
+
+.favorites__section {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.favorites__card {
+
+}
+
+.favorites-thumbnail {
+    max-width: 20rem;
+}
+
+.favorites__list {
+    list-style: none;
+
+}
