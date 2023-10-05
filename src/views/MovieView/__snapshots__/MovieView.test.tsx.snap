@@ -1,0 +1,337 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Movie view > Should render app 1`] = `
+<div>
+  <header
+    className="header"
+  >
+    <img
+      alt="Fakeflix logo"
+      className="header__logo"
+      src="/Paketering-gruppexamination/src/assets/images/fakeflix.png"
+    />
+    <section
+      className="hamburger-menu "
+      onClick={[Function]}
+    >
+      <span
+        className="hamburger-menu__line"
+      />
+      <span
+        className="hamburger-menu__line"
+      />
+      <span
+        className="hamburger-menu__line"
+      />
+    </section>
+    <nav
+      className="navigation"
+    />
+  </header>
+  <div
+    className="Searchbar"
+  >
+    <div
+      className="input-wrapper"
+    >
+      <svg
+        fill="currentColor"
+        height="1em"
+        id="SearchIcon"
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 512 512"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+        />
+      </svg>
+      <input
+        onChange={[Function]}
+        placeholder="Search movie on title?"
+        value=""
+      />
+    </div>
+    <div
+      className="searchResults"
+    >
+      <ul />
+    </div>
+  </div>
+  <h1
+    className="home-heading"
+  >
+    Trending:
+  </h1>
+  <div
+    className="megabody-t"
+  >
+    <div
+      className="container-t"
+    >
+      <div
+        className="slider-wrapper-t"
+      >
+        <button
+          className="slide-button-t material-symbols-rounded"
+          id="prev-slide"
+        >
+          chevron_left
+        </button>
+        <div
+          className="image-list-t"
+        >
+          <img
+            alt="Movie 0"
+            className="image-item-t"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_QL75_UY562_CR7,0,380,562_.jpg"
+          />
+          <img
+            alt="Movie 1"
+            className="image-item-t"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
+          />
+          <img
+            alt="Movie 2"
+            className="image-item-t"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/I/71V4mbT4n9L._AC_SL1130_.jpg"
+          />
+          <img
+            alt="Movie 3"
+            className="image-item-t"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
+          />
+          <img
+            alt="Movie 4"
+            className="image-item-t"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BY2IzZGY2YmEtYzljNS00NTM5LTgwMzUtMzM1NjQ4NGI0OTk0XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_QL75_UX380_CR0,5,380,562_.jpg"
+          />
+          <img
+            alt="Movie 5"
+            className="image-item-t"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BMGU2NzRmZjUtOGUxYS00ZjdjLWEwZWItY2NlM2JhNjkxNTFmXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_QL75_UX380_CR0,1,380,562_.jpg"
+          />
+          <img
+            alt="Movie 6"
+            className="image-item-t"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BNTQwNDM1YzItNDAxZC00NWY2LTk0M2UtNDIwNWI5OGUyNWUxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_QL75_UX380_CR0,1,380,562_.jpg"
+          />
+        </div>
+        <button
+          className="slide-button-t material-symbols-rounded"
+          id="next-slide"
+        >
+          chevron_right
+        </button>
+      </div>
+      <div
+        className="slider-scrollbar-t"
+      >
+        <div
+          className="scrollbar-track-t"
+        >
+          <div
+            className="scrollbar-thumb-t"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <h1
+    className="home-heading"
+  >
+    Recommended:
+  </h1>
+  <div
+    className="megabody"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="slider-wrapper"
+      >
+        <button
+          className="slide-button material-symbols-rounded"
+          id="prev-slide"
+        >
+          chevron_left
+        </button>
+        <div
+          className="image-list"
+        >
+          <img
+            alt="Movie 0"
+            className="image-item"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_QL75_UX380_CR0,4,380,562_.jpg"
+          />
+          <img
+            alt="Movie 1"
+            className="image-item"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_QL75_UY562_CR8,0,380,562_.jpg"
+          />
+          <img
+            alt="Movie 2"
+            className="image-item"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
+          />
+          <img
+            alt="Movie 3"
+            className="image-item"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BMWU4N2FjNzYtNTVkNC00NzQ0LTg0MjAtYTJlMjFhNGUxZDFmXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
+          />
+          <img
+            alt="Movie 4"
+            className="image-item"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BNDE4OTMxMTctNmRhYy00NWE2LTg3YzItYTk3M2UwOTU5Njg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
+          />
+          <img
+            alt="Movie 5"
+            className="image-item"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
+          />
+          <img
+            alt="Movie 6"
+            className="image-item"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BOTQ5NDI3MTI4MF5BMl5BanBnXkFtZTgwNDQ4ODE5MDE@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
+          />
+          <img
+            alt="Movie 7"
+            className="image-item"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
+          />
+          <img
+            alt="Movie 8"
+            className="image-item"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
+          />
+          <img
+            alt="Movie 9"
+            className="image-item"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
+          />
+          <img
+            alt="Movie 10"
+            className="image-item"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
+          />
+          <img
+            alt="Movie 11"
+            className="image-item"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BY2NkZjEzMDgtN2RjYy00YzM1LWI4ZmQtMjIwYjFjNmI3ZGEwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
+          />
+          <img
+            alt="Movie 12"
+            className="image-item"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BZjA0OWVhOTAtYWQxNi00YzNhLWI4ZjYtNjFjZTEyYjJlNDVlL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
+          />
+          <img
+            alt="Movie 13"
+            className="image-item"
+            onClick={[Function]}
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Seven_Samurai_poster.jpg/1024px-Seven_Samurai_poster.jpg"
+          />
+          <img
+            alt="Movie 14"
+            className="image-item"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BNjNhZTk0ZmEtNjJhMi00YzFlLWE1MmEtYzM1M2ZmMGMwMTU4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
+          />
+          <img
+            alt="Movie 15"
+            className="image-item"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BZGMxZTdjZmYtMmE2Ni00ZTdkLWI5NTgtNjlmMjBiNzU2MmI5XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_QL75_UX380_CR0,14,380,562_.jpg"
+          />
+          <img
+            alt="Movie 16"
+            className="image-item"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BNTU2ODkyY2MtMjU1NC00NjE1LWEzYjgtMWQ3MzRhMTE0NDc0XkEyXkFqcGdeQXVyMjM4MzQ4OTQ@._V1_QL75_UY562_CR1,0,380,562_.jpg"
+          />
+          <img
+            alt="Movie 17"
+            className="image-item"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BMGU5OWEwZDItNmNkMC00NzZmLTk1YTctNzVhZTJjM2NlZTVmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
+          />
+          <img
+            alt="Movie 18"
+            className="image-item"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BODQ3NDExOGYtMzI3Mi00NWRlLTkwNjAtNjc4MDgzZGJiZTA1XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_QL75_UX380_CR0,3,380,562_.jpg"
+          />
+          <img
+            alt="Movie 19"
+            className="image-item"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BMTI1MTY2OTIxNV5BMl5BanBnXkFtZTYwNjQ4NjY3._V1_QL75_UY562_CR0,0,380,562_.jpg"
+          />
+          <img
+            alt="Movie 20"
+            className="image-item"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BNGUxYWM3M2MtMGM3Mi00ZmRiLWE0NGQtZjE5ODI2OTJhNTU0XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_QL75_UY562_CR2,0,380,562_.jpg"
+          />
+          <img
+            alt="Movie 21"
+            className="image-item"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BMDliMmNhNDEtODUyOS00MjNlLTgxODEtN2U3NzIxMGVkZTA1L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+          />
+          <img
+            alt="Movie 22"
+            className="image-item"
+            onClick={[Function]}
+            src="https://m.media-amazon.com/images/M/MV5BOTA5NDZlZGUtMjAxOS00YTRkLTkwYmMtYWQ0NWEwZDZiNjEzXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+          />
+        </div>
+        <button
+          className="slide-button material-symbols-rounded"
+          id="next-slide"
+        >
+          chevron_right
+        </button>
+      </div>
+      <div
+        className="slider-scrollbar"
+      >
+        <div
+          className="scrollbar-track"
+        >
+          <div
+            className="scrollbar-thumb"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
