@@ -148,7 +148,7 @@ function Recommended() {
                     src={movie.thumbnail}
                     alt={`Movie ${index}`}
                   />
-                  <p className='thumb-text'>{movie.title}, {movie.rating}</p>
+                  <p className='thumb-text'>{movie.title}, {movie.year} / <b>{movie.rating}</b></p>
                 </div>
               );
             })}
