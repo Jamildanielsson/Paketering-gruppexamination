@@ -41,7 +41,7 @@ function FavoritesView() {
   })
 
   const navigateToStart = () => {
-    navigate(-1)
+    navigate('/Paketering-gruppexamination/')
   }
   
   return (
