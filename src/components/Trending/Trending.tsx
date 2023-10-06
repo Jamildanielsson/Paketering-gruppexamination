@@ -118,7 +118,7 @@ function Trending() {
           <div className='image-list-t' ref={imageListRef}>
             {isNotTrendingComp.map((movie: MovieData, index: number) => {
               return (
-                <div className='rec-card'>
+                <div className='rec-card' key={movie.title}>
                   <div className='blur-container'></div>
                   <img
                     className='favoritePNG'
