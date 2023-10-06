@@ -50,7 +50,11 @@ const Searchbar = () => {
               }
             >
               <img src={item.thumbnail} height='100rem' />
-              {item.title}
+              <div className=''>
+                <h3>{item.title}</h3>
+                <p>{item.year} | {item.rating} </p>
+              </div>
+
             </li>
           ))}
         </ul>
