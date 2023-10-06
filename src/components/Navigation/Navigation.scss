@@ -3,14 +3,28 @@
 
 .navigation {
   position: absolute;
-  color: white;
+  color: $white;
   top: 3.7rem;
   width: 50vw;
   right: 0;
   z-index: 4;
-  background-color: black;
+  background-color: $black;
   max-width: 600px;
   border-radius: 0px 0px 0px 10px;
+
+  // Smooth Effect //
+  opacity: 1;
+  visibility: visible;
+  transition: 0.3s ease;
+  transform: translateY(0);
+
+  &.inactive {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    transform: translateY(-30px);
+  }
+  // ------------ //
 
   &__links {
     list-style-type: none;
@@ -24,8 +38,8 @@
 
     &__favorite-number {
       color: rgb(255, 255, 92);
-      @include NothingYouCouldDoFont;
-      font-size: 1.5rem;
+      @include defaultFont;
+      font-size: 1.1rem;
     }
 
     &:not(:first-child) {
