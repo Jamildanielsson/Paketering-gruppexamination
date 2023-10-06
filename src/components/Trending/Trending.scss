@@ -1,3 +1,8 @@
+@import '../../sass/colors';
+$medium: 900px;
+$small: 400px;
+$smaller: 280px;
+
 .favoritePNG {
   position: absolute;
   top: 1px;
@@ -47,7 +52,7 @@
   max-height: 22rem;
 }
 
-.slider-wrapper-t .image-list-t::-webkit-scrollbar-t {
+.slider-wrapper-t .image-list-t::-webkit-scrollbar {
   display: none;
 }
 
@@ -142,14 +147,20 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 999;
+  @media screen and (max-width: $small) {
+    display: none !important; }
 }
 
 .slider-wrapper-t .slide-button-t#prev-slide {
   left: 1.5rem;
+  @media screen and (max-width: $small) {
+    display: none; }
 }
 
 .slider-wrapper-t .slide-button-t#next-slide {
   right: 1.5rem;
+  @media screen and (max-width: $small) {
+    display: none; }
 }
 
 .slider-wrapper-t .slide-button-t:hover {
