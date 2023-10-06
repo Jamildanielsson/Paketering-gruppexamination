@@ -56,7 +56,7 @@ const Searchbar = () => {
                     currentTarget.src = missing;
                   }} src={item.thumbnail} height='100rem' />
 
-              <div className=''>
+              <div>
                 <h3>{item.title}</h3>
                 <p>{item.year} | {item.rating} </p>
               </div>

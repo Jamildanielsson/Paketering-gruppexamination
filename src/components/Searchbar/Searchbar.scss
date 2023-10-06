@@ -1,4 +1,5 @@
 @import '../../sass/colors';
+$medium: 700px;
 
 .input-wrapper{
     background-color: $white;
@@ -50,8 +51,11 @@ input:focus{
 }
 
 .searchResults{
-    z-index: 100;
+    z-index: 1000;
     background-color: $white;
     position: absolute;
     width: 70%;
+    @media screen and (max-width: $medium) {
+        width: 100%;
+      }
 }
