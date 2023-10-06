@@ -5,6 +5,7 @@ import { AppDispatch, RootState } from '../../redux/store';
 import Movies from '../../assets/movies.json'
 import { isEmpty } from 'lodash';
 import { useNavigate } from 'react-router-dom';
+import missing from '../../assets/images/missing.png'
 import { favoriteClickHandler } from '../../utils/favoriteClickHandler';
 import { useDispatch } from 'react-redux';
 
@@ -17,7 +18,10 @@ function FavoritesView() {
     if(favorites.includes(movie.title)) {
       return (
         <li className='favorites__list' key={index + 'list'}>
-          <div className='favorites-image-container'><img className='favorites-thumbnail' src={movie.thumbnail}/></div>
+          <div className='favorites-image-container'><img onError={({ currentTarget }) => {
+                    currentTarget.onerror = null;
+                    currentTarget.src = missing;
+                  }} className='favorites-thumbnail' src={movie.thumbnail}/></div>
           <div key={index} className='favorites-text-container'>
             <div className='favorites__title-year'>
               <h1 className='favorites-title'>{movie.title}</h1>

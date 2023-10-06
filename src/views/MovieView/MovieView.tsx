@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { findMovie } from '../../utils/findMovie';
 import { favoriteClickHandler } from '../../utils/favoriteClickHandler';
+import missing from '../../assets/images/missing.png'
 
 function MovieView() {
   const dispatch: AppDispatch = useDispatch();
@@ -27,7 +28,10 @@ function MovieView() {
         <section className='movie-view__card'>
           <div className='movie-view__card__container'>
             <div className='movie-view__card__container__thumbnail'>
-              <img
+              <img onError={({ currentTarget }) => {
+                    currentTarget.onerror = null;
+                    currentTarget.src = missing;
+                  }}
                 className='movie-view__card__container__thumbnailIMG'
                 src={movie.thumbnail}
                 alt={movie.title}
