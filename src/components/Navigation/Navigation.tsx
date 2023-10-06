@@ -8,7 +8,7 @@ function Navigation({ isOpen }: INavigationProps) {
   const favorites = useSelector((state: RootState) => state.favorites);
 
   return (
-    <nav className='navigation'>
+    <nav className={`navigation ${isOpen ? '' : 'inactive'}`}>
       {isOpen && (
         <ul className='navigation__links'>
           {/* HOME */}
