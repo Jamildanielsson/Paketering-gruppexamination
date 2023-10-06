@@ -1,13 +1,16 @@
 import Header from '../../components/Header/Header';
 import './FavoritesView.scss';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
-import { RootState } from '../../redux/store';
+import { AppDispatch, RootState } from '../../redux/store';
 import Movies from '../../assets/movies.json'
 import { isEmpty } from 'lodash';
 import { useNavigate } from 'react-router-dom';
+import { favoriteClickHandler } from '../../utils/favoriteClickHandler';
+import { useDispatch } from 'react-redux';
 
 function FavoritesView() {
   const navigate = useNavigate();
+  const dispatch: AppDispatch = useDispatch();
   const favorites = useSelector((state: RootState) => state.favorites);
   
   const movieComponent = Movies.map((movie, index) => {
@@ -23,7 +26,9 @@ function FavoritesView() {
             </div>
             <div key={index + 'synopsis'} className='favorites-synopsis-button'>
               <p className='favorites-synopsis-text'> {movie.synopsis} </p>
-              <button className='favorites-remove-button' key={'button nr. ' + index}>Remove</button>
+              <button className='favorites-remove-button' key={'button nr. ' + index}  onClick={() =>
+                    favoriteClickHandler(movie.title, favorites, dispatch)
+                  }>Remove</button>
             </div>
           </div>
         </li>
