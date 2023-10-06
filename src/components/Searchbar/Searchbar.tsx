@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../redux/store';
 import { useNavigate } from 'react-router-dom';
 import { getClickedMovieAndNavigate } from '../../utils/getClickedMovieAndNavigate';
+import missing from '../../assets/images/missing.png'
 
 const Searchbar = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -49,7 +50,12 @@ const Searchbar = () => {
                 getClickedMovieAndNavigate(item.title, navigate, dispatch)
               }
             >
-              <img src={item.thumbnail} height='100rem' />
+
+              <img onError={({ currentTarget }) => {
+                    currentTarget.onerror = null;
+                    currentTarget.src = missing;
+                  }} src={item.thumbnail} height='100rem' />
+
               <div className=''>
                 <h3>{item.title}</h3>
                 <p>{item.year} | {item.rating} </p>
