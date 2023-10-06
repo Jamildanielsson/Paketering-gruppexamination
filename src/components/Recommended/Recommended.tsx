@@ -8,6 +8,7 @@ import { getClickedMovieAndNavigate } from '../../utils/getClickedMovieAndNaviga
 import isFavoritePNG from '../../assets/images/favourite-filled.png';
 import isNotFavoritePNG from '../../assets/images/favourite-not-filled.png';
 import { favoriteClickHandler } from '../../utils/favoriteClickHandler';
+import missing from '../../assets/images/missing.png'
 
 function Recommended() {
   const navigate = useNavigate();
@@ -131,7 +132,10 @@ function Recommended() {
                         : isNotFavoritePNG
                     }
                   />
-                  <img
+                  <img onError={({ currentTarget }) => {
+                    currentTarget.onerror = null;
+                    currentTarget.src = missing;
+                  }}
                     onClick={() =>
                       getClickedMovieAndNavigate(
                         movie.title,
@@ -144,6 +148,7 @@ function Recommended() {
                     src={movie.thumbnail}
                     alt={`Movie ${index}`}
                   />
+                  <p className='thumb-text'>{movie.title}, {movie.rating}</p>
                 </div>
               );
             })}

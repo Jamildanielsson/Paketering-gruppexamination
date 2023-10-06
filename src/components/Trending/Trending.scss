@@ -155,3 +155,24 @@
 .slider-wrapper-t .slide-button-t:hover {
   background-color: rgb(255, 121, 121);
 }
+
+.onError-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 20rem;
+  max-height: 20rem;
+  object-fit: cover;
+  grid-row: 1;
+  background-color: rgb(183, 233, 183);
+  &:hover {
+    cursor: pointer;
+    filter: brightness(120%);
+  }
+
+}
+.thumb-text {
+  font-size: small;
+  margin-top: 0.2rem;
+}
