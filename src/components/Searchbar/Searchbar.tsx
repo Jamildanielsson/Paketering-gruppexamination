@@ -50,10 +50,12 @@ const Searchbar = () => {
                 getClickedMovieAndNavigate(item.title, navigate, dispatch)
               }
             >
+
               <img onError={({ currentTarget }) => {
                     currentTarget.onerror = null;
                     currentTarget.src = missing;
                   }} src={item.thumbnail} height='100rem' />
+
               <div className=''>
                 <h3>{item.title}</h3>
                 <p>{item.year} | {item.rating} </p>
