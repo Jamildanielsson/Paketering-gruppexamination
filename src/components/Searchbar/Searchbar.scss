@@ -26,9 +26,8 @@ input:focus{
 .searchResults li{
     margin-inline: 1rem;
     padding: .5rem;
-    font-size: 1.22rem;
+    font-size: 1rem;
     display: flex;
-    align-items: center;
     cursor: pointer; 
 }
 
@@ -44,4 +43,15 @@ input:focus{
 #SearchIcon{
     font-size: 1.5rem;
     margin-right: 1rem;
+}
+
+.searchResults li h4{
+    margin-top: 1rem;
+}
+
+.searchResults{
+    z-index: 100;
+    background-color: $white;
+    position: absolute;
+    width: 70%;
 }
