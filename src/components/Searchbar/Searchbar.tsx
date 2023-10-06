@@ -31,6 +31,13 @@ const Searchbar = () => {
     setFilteredData(filteredData);
   };
 
+  const handleInputBlur = () => {
+    setTimeout(() => {
+      setSearchTerm('');
+      setFilteredData([]);
+    }, 100);
+  };
+
   return (
     <div className='Searchbar'>
       <div className='input-wrapper'>
@@ -39,6 +46,7 @@ const Searchbar = () => {
           placeholder='Search movie on title?'
           value={searchTerm}
           onChange={handleInputChange}
+          onBlur={handleInputBlur}
         />
       </div>
       <div className='searchResults'>
@@ -46,7 +54,7 @@ const Searchbar = () => {
           {filteredData.map((item) => (
             <li
               key={item.title}
-              onClick={() =>
+              onMouseDown={() =>
                 getClickedMovieAndNavigate(item.title, navigate, dispatch)
               }
             >
