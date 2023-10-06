@@ -4,9 +4,10 @@ import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { RootState } from '../../redux/store';
 import Movies from '../../assets/movies.json'
 import { isEmpty } from 'lodash';
+import { useNavigate } from 'react-router-dom';
 
 function FavoritesView() {
-
+  const navigate = useNavigate();
   const favorites = useSelector((state: RootState) => state.favorites);
   
   const movieComponent = Movies.map((movie, index) => {
@@ -29,13 +30,19 @@ function FavoritesView() {
       )
       } 
   })
+
+  const navigateToStart = () => {
+    navigate(-1)
+  }
   
   return (
     <div>
       <Header />
       <div className='favorites__container'>
         <section className={movieComponent && !isEmpty(favorites) ? 'favorites__section' : 'favorites__section-flex'}>
-          { movieComponent && !isEmpty(favorites) ? movieComponent : <div className='favorites-empty'>Please add a favorite, this view is empty</div> }
+          { movieComponent && !isEmpty(favorites) ? movieComponent : 
+          <div className='favorites-empty'><h1 className='favorites__empty-message'>Please add a favorite, this view is empty</h1>
+          <button className='favorites__empty-button' onClick={ navigateToStart }>Back to start</button></div> }
         </section>
       </div>
     </div>
