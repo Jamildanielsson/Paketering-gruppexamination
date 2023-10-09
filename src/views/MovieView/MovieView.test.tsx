@@ -1,11 +1,9 @@
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import { describe, expect, it } from 'vitest';
+import { render } from '@testing-library/react';
+import { describe, it } from 'vitest';
 import { Provider } from 'react-redux';
 import store from '../../redux/store';
 import HomeView from '../HomeView/HomeView';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
-import { waitFor } from '@testing-library/react';
 import MovieView from './MovieView';
 
 describe('Movie view', () => {
