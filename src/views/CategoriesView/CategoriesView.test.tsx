@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import store from '../../redux/store';
 
 
-import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 // import { waitFor } from '@testing-library/react';
 import CategoriesView from './CategoriesView';
 import MovieCard from '../../components/MovieCard/MovieCard';
