@@ -1,0 +1,61 @@
+@import '../../sass/colors';
+
+.movie-card {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.227);
+  border-radius: 15px;
+  width: 200px;
+  position: relative;
+  overflow: hidden;
+
+  &__favoritePNG {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 1.6rem;
+    z-index: 3;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+
+  &__blur-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: $white;
+    z-index: 1;
+    filter: blur(3px);
+  }
+
+  &__blur-container::before {
+    content: '';
+    border-radius: 50px;
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    width: 55px;
+    height: 55px;
+    background-color: inherit;
+  }
+
+  &__thumbnail {
+    max-height: 250px;
+    width: 100%;
+    // border-radius: 20px;
+    border-radius: 0 0 40px 0px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.5rem;
+    font-size: 12px;
+  }
+}

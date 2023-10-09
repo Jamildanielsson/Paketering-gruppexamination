@@ -1,4 +1,5 @@
 @import './sass/_fonts.scss';
+@import './sass/colors.scss';
 
 * {
   margin: 0;
@@ -9,4 +10,21 @@
 
 .App {
   @include defaultFont;
+}
+
+/* SCROLLBAR DESIGN! */
+body::-webkit-scrollbar {
+  width: 0.7rem;
+  background-color: $black;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px $black;
+  border-radius: 50px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: $black;
+  outline: 1px solid $logoRed;
+  border-radius: 50px;
 }
