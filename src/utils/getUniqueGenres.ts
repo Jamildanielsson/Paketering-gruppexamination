@@ -1,6 +1,6 @@
 /**
  * Takes an array of MovieData objects, extracts and trims the genres from each movie,
- * removes any duplicates, sorts them alphabetically, and returns the resulting array.
+ * removes any duplicates, sorts them alphabetically, and returns the resulting array
  * @param arrayFromJson The Json array of movies
  * @returns An alphabetically sorted array of unique genres
  */
