@@ -5,17 +5,13 @@ import { favoriteClickHandler } from '../../utils/favoriteClickHandler';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../redux/store';
 import missing from '../../assets/images/missing.png';
-
-interface IMovieCardProps {
-  title: string;
-  year: number;
-  rating: string;
-  thumbnail: string;
-}
+import { getClickedMovieAndNavigate } from '../../utils/getClickedMovieAndNavigate';
+import { useNavigate } from 'react-router-dom';
 
 function MovieCard({ title, year, rating, thumbnail }: IMovieCardProps) {
   const favorites = useSelector((state: RootState) => state.favorites);
   const dispatch: AppDispatch = useDispatch();
+  const navigate = useNavigate();
 
   return (
     <div className='movie-card'>
@@ -26,6 +22,7 @@ function MovieCard({ title, year, rating, thumbnail }: IMovieCardProps) {
         src={favorites.includes(title) ? isFavoritePNG : isNotFavoritePNG}
       />
       <img
+        onClick={() => getClickedMovieAndNavigate(title, navigate, dispatch)}
         onError={({ currentTarget }) => {
           currentTarget.onerror = null;
           currentTarget.src = missing;
