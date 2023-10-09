@@ -5,9 +5,14 @@ import allMoviesData from '../assets/movies.json';
  * @param latestClickedMovie - The title of the movie to find.
  * @returns The movie object if found, or 'undefined' if not found.
  */
-export function findMovie(latestClickedMovie: string) {
+export function findMovie(latestClickedMovie: string): MovieData | undefined {
+  if (!Array.isArray(allMoviesData)) {
+    console.error(`Invalid movie data: ${allMoviesData}`);
+    return undefined;
+  }
+
   const foundMovie = allMoviesData.find(
-    (movie) => movie.title === latestClickedMovie
+    (movie: MovieData) => movie.title === latestClickedMovie
   );
 
   return foundMovie;
