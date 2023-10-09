@@ -47,8 +47,12 @@
   &__thumbnail {
     max-height: 250px;
     width: 100%;
-    // border-radius: 20px;
     border-radius: 0 0 40px 0px;
+
+    &:hover {
+      cursor: pointer;
+      filter: brightness(120%);
+    }
   }
 
   &__info {
