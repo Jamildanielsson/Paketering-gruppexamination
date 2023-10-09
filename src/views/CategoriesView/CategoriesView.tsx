@@ -2,7 +2,7 @@ import Header from '../../components/Header/Header';
 import './CategoriesView.scss';
 import allMoviesArray from '../../assets/movies.json';
 import { getUniqueGenres } from '../../utils/getUniqueGenres';
-import GenreCarousel from '../../GenreCarousel/GenreCarousel';
+import GenreCarousel from '../../components/GenreCarousel/GenreCarousel';
 
 function CategoriesView() {
   const availableGenres = getUniqueGenres(allMoviesArray);

@@ -3,9 +3,9 @@ import './GenreCarousel.scss';
 import 'slick-carousel/slick/slick.scss';
 import 'slick-carousel/slick/slick-theme.scss';
 import Slider from 'react-slick';
-import { sliderSettings } from '../utils/sliderSettings';
-import MovieCard from '../components/MovieCard/MovieCard';
-import allMoviesArray from '../assets/movies.json';
+import { sliderSettings } from '../../utils/sliderSettings';
+import MovieCard from '../../components/MovieCard/MovieCard';
+import allMoviesArray from '../../assets/movies.json';
 
 interface IGenreCarouselProps {
   genre: string;
