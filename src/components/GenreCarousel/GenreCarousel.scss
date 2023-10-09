@@ -1,5 +1,22 @@
+@import '../../sass/colors';
+@import '../../sass/fonts';
+
+.genre-carousel {
+  &__gradient-bg {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.299),
+      rgba(0, 0, 0, 0.556)
+    );
+  }
+  &__genre-text {
+    padding-left: 1rem;
+    @include QuintessentialFont;
+    letter-spacing: 0.06rem;
+    font-size: 25px;
+  }
+}
+
 .carousel {
   padding: 2rem 3rem;
-  background-color: black;
-  color: white;
 }
