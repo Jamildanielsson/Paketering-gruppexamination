@@ -6,3 +6,10 @@ import '@testing-library/jest-dom/vitest';
 afterEach(() => {
   cleanup();
 });
+global.matchMedia = global.matchMedia || function() {
+  return {
+      matches : false,
+      addListener : function() {},
+      removeListener: function() {}
+  }
+}
