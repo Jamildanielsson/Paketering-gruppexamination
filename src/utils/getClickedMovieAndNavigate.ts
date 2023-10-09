@@ -1,4 +1,5 @@
 import { setLatestMovie } from '../redux/latestMovieSlice';
+import { Dispatch } from 'redux';
 
 /**
  * A function that updates the latest movie in the Redux store and navigates to movie view page.
@@ -9,7 +10,7 @@ import { setLatestMovie } from '../redux/latestMovieSlice';
 export function getClickedMovieAndNavigate(
   movieTitle: string,
   navigate: Function,
-  dispatch: Function
+  dispatch: Dispatch
 ) {
   // Dispatch redux action to set the latest movieClick in the store.
   dispatch(setLatestMovie({ latestMovie: movieTitle }));
