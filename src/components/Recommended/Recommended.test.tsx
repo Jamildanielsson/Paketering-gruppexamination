@@ -7,7 +7,7 @@ import HomeView from '../../views/HomeView/HomeView';
 import Recommended from './Recommended';
 import { BrowserRouter } from 'react-router-dom';
 
-describe.only('test that the base is being rendered', () => {
+describe(Recommended, () => {
   it('should display a heading with the text "Trending:" ', async () => {
     render(
       <Provider store={store}>
