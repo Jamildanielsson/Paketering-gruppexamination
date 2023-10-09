@@ -9,7 +9,6 @@ interface MovieData {
   isTrending?: boolean;
 }
 
-// Props Interface
 interface IHamburgerProps {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -21,4 +20,11 @@ interface INavigationProps {
 
 interface ILatestMovie {
   latestMovie: string;
+}
+
+interface IMovieCardProps {
+  title: string;
+  year: number;
+  rating: string;
+  thumbnail: string;
 }

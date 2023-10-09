@@ -6,12 +6,12 @@ import Recommended from '../../components/Recommended/Recommended';
 
 function HomeView() {
   return (
-    <div>
+    <div className='homeview'>
       <Header />
-      <Searchbar/>
-      <h1 className='home-heading'>Trending:</h1>
+      <Searchbar />
+      <h1 className='homeview__home-heading'>Trending:</h1>
       <Trending />
-      <h1 className='home-heading'>Recommended:</h1>
+      <h1 className='homeview__home-heading'>Recommended:</h1>
       <Recommended />
     </div>
   );

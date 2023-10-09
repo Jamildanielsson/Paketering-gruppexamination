@@ -1,4 +1,5 @@
 import { addToFavorites, removeFromFavorites } from '../redux/favoritesSlice';
+import { Dispatch } from 'redux';
 
 /**
  *	Checks if your movie you click on is favorite and remove or add is depending on that.
@@ -9,7 +10,7 @@ import { addToFavorites, removeFromFavorites } from '../redux/favoritesSlice';
 export function favoriteClickHandler(
   movieTitle: string,
   favorites: string[],
-  dispatch: Function
+  dispatch: Dispatch
 ) {
   if (favorites.includes(movieTitle)) {
     dispatch(removeFromFavorites(movieTitle));

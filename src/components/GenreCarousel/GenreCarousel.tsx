@@ -12,7 +12,6 @@ interface IGenreCarouselProps {
 }
 
 function GenreCarousel({ genre }: IGenreCarouselProps) {
-  // Assuming you have the genre you want to filter by as a variable called 'genre'
   const moviesThatContainGenre: MovieData[] = allMoviesArray.filter((movie) =>
     movie.genre.includes(genre)
   );
@@ -20,6 +19,7 @@ function GenreCarousel({ genre }: IGenreCarouselProps) {
   const movieCardComponents = moviesThatContainGenre.map((movie) => {
     return (
       <MovieCard
+        key={movie.title}
         title={movie.title}
         year={movie.year}
         thumbnail={movie.thumbnail}
