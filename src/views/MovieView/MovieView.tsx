@@ -11,7 +11,8 @@ function MovieView() {
   const dispatch: AppDispatch = useDispatch();
   const favorites = useSelector((state: RootState) => state.favorites);
   const [movie, setMovie] = useState<MovieData | undefined>(undefined);
-
+  console.log(favorites);
+  
   const latestClickedMovie: string = useSelector(
     (state: RootState) => state.lastestMovie.latestMovie
   );
