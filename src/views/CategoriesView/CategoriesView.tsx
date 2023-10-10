@@ -7,8 +7,6 @@ import GenreCarousel from '../../components/GenreCarousel/GenreCarousel';
 function CategoriesView() {
   const availableGenres = getUniqueGenres(allMoviesArray);
 
-  console.log(availableGenres);
-
   const genreCarouselComponents = availableGenres.map((availableGenre) => (
     <GenreCarousel key={availableGenre} genre={availableGenre} />
   ));
