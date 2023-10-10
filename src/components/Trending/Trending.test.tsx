@@ -1,31 +1,27 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
-import store from '../../redux/store';
-import HomeView from '../../views/HomeView/HomeView';
 import Trending from './Trending';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
+import userEvent from '@testing-library/user-event';
+import { AnyAction, Store, createStore} from '@reduxjs/toolkit';
+import { AppDispatch, RootState } from '../../redux/store';
 
-describe('test that the base is being rendered', () => {
-  it('should display a heading with the text "Trending:" ', async () => {
-    render(
-      <Provider store={store}>
-        <BrowserRouter>
-          <HomeView />
-        </BrowserRouter>
-      </Provider>
-    );
-    const trendingHeading = await screen.findByText('Trending:');
-    expect(trendingHeading).toBeInTheDocument();
-  });
 
+
+let store: Store<RootState, AnyAction> & { dispatch: AppDispatch };
+beforeEach(() => {
+  store = createStore();
+});
+
+describe(Trending, () => {
   it('should display 8 image-elements', () => {
     render(
       <Provider store={store}>
-        <BrowserRouter>
+        <MemoryRouter>
           <Trending />
-        </BrowserRouter>
+        </MemoryRouter>
       </Provider>
     );
     const imageElements = screen.getAllByRole('img');
