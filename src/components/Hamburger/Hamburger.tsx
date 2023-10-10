@@ -20,7 +20,7 @@ function Hamburger({ isOpen, setIsOpen }: IHamburgerProps) {
       className={`hamburger-menu ${isOpen ? 'hamburger-menu--open' : ''}`}
       onClick={() => setIsOpen((prev) => !prev)}
     >
-      <span className='hamburger-menu__line'></span>
+      <span className='hamburger-menu__line' data-testid='navigation'></span>
       <span className='hamburger-menu__line'></span>
       <span className='hamburger-menu__line'></span>
     </section>

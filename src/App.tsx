@@ -5,8 +5,8 @@ import MovieView from './views/MovieView/MovieView';
 import FavoritesView from './views/FavoritesView/FavoritesView';
 import CategoriesView from './views/CategoriesView/CategoriesView';
 
-import store from './redux/store';
 import { Provider } from 'react-redux';
+import { createStore } from './redux/store';
 
 function App() {
   const router = createBrowserRouter([
@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div className='App'>
-      <Provider store={store}>
+      <Provider store={createStore()}>
         <RouterProvider router={router} />
       </Provider>
     </div>
