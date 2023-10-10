@@ -21,13 +21,14 @@ function Navigation({ isOpen }: INavigationProps) {
 
           {/* FAVORITES */}
           <li
+            aria-label='favorites'
             onClick={() =>
               navigate('/Paketering-gruppexamination/favoritesview/')
             }
             className='navigation__link'
           >
             Favorites ({' '}
-            <span className='navigation__link__favorite-number'>
+            <span className='navigation__link__favorite-number' data-testid='favorite-number'>
               {favorites.length}
             </span>{' '}
             )

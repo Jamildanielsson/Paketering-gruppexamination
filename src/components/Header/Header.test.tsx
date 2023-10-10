@@ -1,9 +1,14 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, afterEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import Header from './Header';
 import { Provider } from 'react-redux';
-import store from '../../redux/store';
+import { createStore } from '../../redux/store';
+
+let store = createStore();
+afterEach(() => {
+  store = createStore();
+});
 
 describe(Header, () => {
   it('Should render the fakeflix logo in the header', () => {

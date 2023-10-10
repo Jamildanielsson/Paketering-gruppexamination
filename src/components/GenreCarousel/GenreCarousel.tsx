@@ -29,8 +29,10 @@ function GenreCarousel({ genre }: IGenreCarouselProps) {
   });
 
   return (
-    <div className='genre-carousel'>
-      <h2>{genre}</h2>
+    <div className='genre-carousel' data-testid={genre}>
+      <div className='genre-carousel__gradient-bg'>
+        <h2 className='genre-carousel__genre-text'>{genre}</h2>
+      </div>
       <div className='carousel'>
         <Slider {...sliderSettings}>{movieCardComponents}</Slider>
       </div>

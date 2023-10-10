@@ -9,9 +9,13 @@ function HomeView() {
     <div className='homeview'>
       <Header />
       <Searchbar />
-      <h1 className='homeview__home-heading'>Trending:</h1>
+      <div className='homeview__gradient-bg'>
+        <h1 className='homeview__trending-text'>Trending</h1>
+      </div>
       <Trending />
-      <h1 className='homeview__home-heading'>Recommended:</h1>
+      <div className='homeview__gradient-bg'>
+        <h1 className='homeview__recommended-text'>Recommended</h1>
+      </div>
       <Recommended />
     </div>
   );

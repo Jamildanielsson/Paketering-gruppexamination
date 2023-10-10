@@ -1,9 +1,14 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, afterEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import Navigation from './Navigation';
 import { Provider } from 'react-redux';
-import store from '../../redux/store';
+import { createStore } from '../../redux/store';
+
+let store = createStore();
+afterEach(() => {
+  store = createStore();
+});
 
 describe('Navigation', () => {
   it('Should render all the navigation texts', () => {

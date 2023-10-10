@@ -17,6 +17,8 @@ function MovieCard({ title, year, rating, thumbnail }: IMovieCardProps) {
     <div className='movie-card'>
       <div className='movie-card__blur-container'></div>
       <img
+        aria-label="star image"
+        alt='favorite star'
         className='movie-card__favoritePNG'
         onClick={() => favoriteClickHandler(title, favorites, dispatch)}
         src={favorites.includes(title) ? isFavoritePNG : isNotFavoritePNG}
@@ -29,6 +31,7 @@ function MovieCard({ title, year, rating, thumbnail }: IMovieCardProps) {
         }}
         className='movie-card__thumbnail'
         src={thumbnail}
+        alt='movie thumbnail'
       />
 
       <div className='movie-card__info'>

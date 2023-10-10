@@ -1,19 +1,21 @@
 @import '../../sass/colors';
 
 .movie-card {
-  margin: auto;
+  margin: 0.5rem auto;
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(255, 255, 255, 0.227);
-  border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255);
+  border-inline: 1px solid white;
+  box-shadow: 2px 2px 3px rgb(255, 255, 255);
+  border-radius: 30px 30px 60px 10px;
   width: 200px;
   position: relative;
   overflow: hidden;
 
   &__favoritePNG {
     position: absolute;
-    top: 3px;
-    right: 3px;
+    top: 6px;
+    right: 7px;
     width: 1.6rem;
     z-index: 3;
     transition: 0.2s ease-in-out;
@@ -28,17 +30,17 @@
     position: absolute;
     top: 0;
     right: 0;
-    background-color: $white;
+    background-color: white;
     z-index: 1;
-    filter: blur(3px);
+    filter: blur(2px);
   }
 
   &__blur-container::before {
     content: '';
     border-radius: 50px;
     position: absolute;
-    top: -16px;
-    right: -16px;
+    top: -10px;
+    right: -10px;
     width: 55px;
     height: 55px;
     background-color: inherit;
@@ -47,7 +49,8 @@
   &__thumbnail {
     max-height: 250px;
     width: 100%;
-    border-radius: 0 0 40px 0px;
+    border-radius: 10px 30px 0px 0px;
+    border-bottom: 2px solid white;
 
     &:hover {
       cursor: pointer;
@@ -58,8 +61,36 @@
   &__info {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
     padding: 0.5rem;
     font-size: 12px;
+
+    &__title {
+      font-size: 1rem;
+      text-align: center;
+      font-style: italic;
+    }
+
+    &__year {
+      font-size: 0.7rem;
+      margin-top: 2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    &__rating {
+      font-size: 0.7rem;
+    }
+  }
+}
+
+////////////////////////////////////
+//        | MEDIA QUERY |         //
+///////////////////////////////////
+//| SMALL x MOBILE |//
+@media only screen and (min-width: 0px) and (max-width: 350px) {
+  .movie-card {
+    width: 160px;
+    &__thumbnail {
+      max-height: 200px;
+    }
   }
 }
