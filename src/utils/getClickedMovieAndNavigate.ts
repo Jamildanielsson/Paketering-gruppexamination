@@ -20,7 +20,7 @@ export function getClickedMovieAndNavigate(
   }
 
   try {
-    navigate('/paketering-gruppexamination/movieview/');
+    navigate('/Paketering-gruppexamination/movieview/');
   } catch (error) {
     console.error('Failed to navigate...', error);
   }
