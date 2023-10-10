@@ -1,5 +1,6 @@
 @import '../../sass/colors';
-$medium: 900px;
+$large: 1250px;
+$medium: 1100px;
 $small: 300px;
 $smaller: 280px;
 
@@ -40,7 +41,7 @@ $smaller: 280px;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
   padding: 0.5rem;
   box-shadow: 0 0 2px #000;
   margin: 0.3rem;
@@ -111,8 +112,13 @@ $smaller: 280px;
   -webkit-user-select: none;
   touch-action: manipulation;
   max-width: 50%;
+  @media screen and (max-width: $large) {
+    font-size: 75%;
+
+  }
   @media screen and (max-width: $medium) {
     margin-left: 0rem;
+
   }
 }
 
