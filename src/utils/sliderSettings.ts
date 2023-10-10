@@ -1,7 +1,7 @@
 export const sliderSettings = {
-  dots: true,
+  dots: false,
   infinite: false,
-  speed: 500,
+  speed: 600,
   slidesToShow: 4,
   slidesToScroll: 4,
   initialSlide: 0,
@@ -11,8 +11,6 @@ export const sliderSettings = {
       settings: {
         slidesToShow: 3,
         slidesToScroll: 3,
-        // infinite: true,
-        dots: true,
       },
     },
     {
@@ -20,7 +18,6 @@ export const sliderSettings = {
       settings: {
         slidesToShow: 2,
         slidesToScroll: 2,
-        initialSlide: 2,
       },
     },
     {
