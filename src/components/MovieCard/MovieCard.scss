@@ -81,3 +81,16 @@
     }
   }
 }
+
+////////////////////////////////////
+//        | MEDIA QUERY |         //
+///////////////////////////////////
+//| SMALL x MOBILE |//
+@media only screen and (min-width: 0px) and (max-width: 350px) {
+  .movie-card {
+    width: 160px;
+    &__thumbnail {
+      max-height: 200px;
+    }
+  }
+}
