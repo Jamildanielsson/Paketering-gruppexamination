@@ -1,61 +1,62 @@
 @import '../../sass/colors';
 $medium: 700px;
 
-.input-wrapper{
-    background-color: $white;
-    border-radius: 10px;
-    padding: 1rem;
-    box-shadow: 0 0 8 #ddd;
-    display: flex;
-    align-items: center;
-    margin-inline: 1rem;
-    margin-top: .5rem;
+.input-wrapper {
+  background-color: $white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 0 8 #ddd;
+  display: flex;
+  align-items: center;
+  margin-inline: 1rem;
+  margin-top: 0.5rem;
 }
 
-input{
-    background-color: transparent;
-    border: none;
-    height: 100%;
-    font-size: 1.25rem;
+input {
+  background-color: transparent;
+  border: none;
+  //   height: 100%;
+  font-size: 1rem;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+}
+
+.searchResults li {
+  margin-inline: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  display: flex;
+  cursor: pointer;
+}
+
+.searchResults li img {
+  margin-right: 1rem;
+}
+
+.searchResults li:hover {
+  background-color: rgb(220, 220, 220);
+  border-radius: 2px;
+}
+
+#SearchIcon {
+  font-size: 1.1rem;
+  margin-right: 1rem;
+  filter: invert(1);
+}
+
+.searchResults li h4 {
+  margin-top: 1rem;
+}
+
+.searchResults {
+  z-index: 1000;
+  background-color: $white;
+  position: absolute;
+  width: 70%;
+  @media screen and (max-width: $medium) {
     width: 100%;
-}
-
-input:focus{
-    outline: none;
-}
-
-.searchResults li{
-    margin-inline: 1rem;
-    padding: .5rem;
-    font-size: 1rem;
-    display: flex;
-    cursor: pointer; 
-}
-
-.searchResults li img{
- margin-right: 1rem;
-}
-
-.searchResults li:hover{
-    background-color: rgb(220, 220, 220);
-    border-radius: 2px;
-}
-
-#SearchIcon{
-    font-size: 1.5rem;
-    margin-right: 1rem;
-}
-
-.searchResults li h4{
-    margin-top: 1rem;
-}
-
-.searchResults{
-    z-index: 1000;
-    background-color: $white;
-    position: absolute;
-    width: 70%;
-    @media screen and (max-width: $medium) {
-        width: 100%;
-      }
+  }
 }

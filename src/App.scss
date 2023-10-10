@@ -10,6 +10,10 @@
 
 .App {
   @include defaultFont;
+  background-color: $black;
+  color: $white;
+
+  min-height: 100vh;
 }
 
 /* SCROLLBAR DESIGN! */
