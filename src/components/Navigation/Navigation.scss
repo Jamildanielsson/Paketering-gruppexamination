@@ -56,3 +56,19 @@
     }
   }
 }
+
+////////////////////////////////////
+//        | MEDIA QUERY |         //
+///////////////////////////////////
+//| SMALL x MOBILE |//
+@media only screen and (min-width: 0px) and (max-width: 350px) {
+  .navigation {
+    &__link {
+      font-size: 0.7rem;
+
+      &__favorite-number {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
