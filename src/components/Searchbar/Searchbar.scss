@@ -15,7 +15,6 @@ $medium: 700px;
 input {
   background-color: transparent;
   border: none;
-  //   height: 100%;
   font-size: 1rem;
   width: 100%;
 }
@@ -37,7 +36,7 @@ input:focus {
 }
 
 .searchResults li:hover {
-  background-color: rgb(220, 220, 220);
+  background-color: rgb(25, 25, 25);
   border-radius: 2px;
 }
 
@@ -47,13 +46,10 @@ input:focus {
   filter: invert(1);
 }
 
-.searchResults li h4 {
-  margin-top: 1rem;
-}
-
 .searchResults {
-  z-index: 1000;
-  background-color: $white;
+  z-index: 999;
+  background-color: $black;
+  color: white;
   position: absolute;
   width: 70%;
   @media screen and (max-width: $medium) {
