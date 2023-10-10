@@ -72,6 +72,21 @@ describe(Trending, () => {
       '/Paketering-gruppexamination/src/assets/images/favourite-filled.png'
     );
 
+    it('should be 36 star-images displaying', async () => {
+      render(
+        <Provider store={store}>
+          <MemoryRouter>
+            <HomeView />
+          </MemoryRouter>
+        </Provider>
+      );
+      const starImages = await screen.findAllByRole('img', {
+        name: 'star image',
+      });
+
+      expect(starImages).toHaveLength(36);
+    });
+
     
   });
 
