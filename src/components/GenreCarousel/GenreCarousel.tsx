@@ -29,7 +29,7 @@ function GenreCarousel({ genre }: IGenreCarouselProps) {
   });
 
   return (
-    <div className='genre-carousel'>
+    <div className='genre-carousel' data-testid={genre}>
       <div className='genre-carousel__gradient-bg'>
         <h2 className='genre-carousel__genre-text'>{genre}</h2>
       </div>
