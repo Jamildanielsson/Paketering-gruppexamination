@@ -82,6 +82,7 @@ describe('Recommended', () => {
 
     expect(starImages).toHaveLength(4);
   });
+
   it('should open the nav>Favorites(0)>ClickStar>OpenNav>Favorites(1) ', async () => {
     // Här måste vi rendera ut hela homeview för att även kunna testa att funktionaliteten mellan Recommended och Navbar fungerar.
     render(
