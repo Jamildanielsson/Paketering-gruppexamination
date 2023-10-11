@@ -57,7 +57,7 @@ describe('Trending', () => {
     ).toBeInTheDocument();
   });
 
-  it('should display a "filled" source on the first star-image after click', async () => {
+  it('should display a "filled" star on the first star-image after click', async () => {
     render(
       <Provider store={store}>
         <MemoryRouter>
