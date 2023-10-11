@@ -50,7 +50,7 @@ function FavoritesView() {
       <div className='favorites__container'>
         <section className={movieComponent && !isEmpty(favorites) ? 'favorites__section' : 'favorites__section-flex'}>
           { movieComponent && !isEmpty(favorites) ? movieComponent : 
-          <div className='favorites-empty'><h1 className='favorites__empty-message'>Please add a favorite, this view is empty</h1>
+          <div className='favorites-empty'><h1 className='favorites__empty-message'>Please add a favorite,<br></br> this view is empty</h1>
           <button className='favorites__empty-button' onClick={ navigateToStart }>Back to start</button></div> }
         </section>
       </div>
