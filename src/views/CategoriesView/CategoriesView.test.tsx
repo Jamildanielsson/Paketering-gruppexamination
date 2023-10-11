@@ -6,7 +6,6 @@ import CategoriesView from './CategoriesView';
 import userEvent from '@testing-library/user-event';
 import MovieView from '../MovieView/MovieView';
 import HomeView from '../HomeView/HomeView';
-import FavoritesView from '../FavoritesView/FavoritesView';
 import { createStore } from '../../redux/store';
 
 let store: TStore;
