@@ -1,12 +1,12 @@
-import { describe, it, expect, afterEach } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import Navigation from './Navigation';
 import { Provider } from 'react-redux';
 import { createStore } from '../../redux/store';
 
-let store = createStore();
-afterEach(() => {
+let store: TStore;
+beforeEach(() => {
   store = createStore();
 });
 

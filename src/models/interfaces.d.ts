@@ -14,6 +14,10 @@ interface IHamburgerProps {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+interface IGenreCarouselProps {
+  genre: string;
+}
+
 interface INavigationProps {
   isOpen: boolean;
 }
