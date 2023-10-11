@@ -188,11 +188,8 @@ $smaller: 280px;
     margin-left: 0rem;
     font-size: medium;
   }
-  @media screen and (max-width: $small) {
-    font-size: small;
-  }
   @media screen and (max-width: $smaller) {
-    font-size: x-small;
+    font-size: 0.8rem;
   }
 }
 
@@ -201,9 +198,6 @@ $smaller: 280px;
     font-size: medium;
   }
   @media screen and (max-width: $small) {
-    font-size: small;
-  }
-  @media screen and (max-width: $smaller) {
-    font-size: x-small;
+    font-size: 0.8rem;
   }
 }
