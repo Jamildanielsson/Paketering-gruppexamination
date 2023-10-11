@@ -53,6 +53,7 @@ const Searchbar = () => {
         <ul>
           {filteredData.map((item) => (
             <li
+            data-testid='searchResultLi'
               key={item.title}
               onMouseDown={() =>
                 getClickedMovieAndNavigate(item.title, navigate, dispatch)
