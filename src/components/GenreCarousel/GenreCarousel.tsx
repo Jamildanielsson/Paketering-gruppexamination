@@ -7,10 +7,6 @@ import { sliderSettings } from '../../utils/sliderSettings';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import allMoviesArray from '../../assets/movies.json';
 
-interface IGenreCarouselProps {
-  genre: string;
-}
-
 function GenreCarousel({ genre }: IGenreCarouselProps) {
   const moviesThatContainGenre: MovieData[] = allMoviesArray.filter((movie) =>
     movie.genre.includes(genre)

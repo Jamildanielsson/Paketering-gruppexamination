@@ -4,13 +4,12 @@ import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
 import Trending from './Trending';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
-import { AppDispatch, RootState, createStore } from '../../redux/store';
-import { AnyAction, Store } from '@reduxjs/toolkit';
+import { createStore } from '../../redux/store';
 import HomeView from '../../views/HomeView/HomeView';
 import MovieView from '../../views/MovieView/MovieView';
 import userEvent from '@testing-library/user-event';
 
-let store: Store<RootState, AnyAction> & { dispatch: AppDispatch };
+let store: TStore;
 beforeEach(() => {
   store = createStore();
 });
@@ -28,14 +27,11 @@ describe('Trending', () => {
     expect(imageElements).toHaveLength(8);
   });
 
-
   //Funktionen trycker på den första thumbnailen (gudfadern 2) och då ska 1974 (året filmen släpptes) visas på skärmen.
   it('should display the movie view when a thumbnail is pressed ', async () => {
     render(
       <Provider store={store}>
-        <MemoryRouter
-          initialEntries={['/Paketering-gruppexamination/']}
-        >
+        <MemoryRouter initialEntries={['/Paketering-gruppexamination/']}>
           <Routes>
             <Route
               path='/Paketering-gruppexamination'
@@ -61,7 +57,7 @@ describe('Trending', () => {
     render(
       <Provider store={store}>
         <MemoryRouter>
-          <Trending/>
+          <Trending />
         </MemoryRouter>
       </Provider>
     );
@@ -71,38 +67,40 @@ describe('Trending', () => {
     expect(starEmpty[0]).toHaveAttribute(
       'src',
       '/Paketering-gruppexamination/src/assets/images/favourite-filled.png'
-  );})
-
-    it('should be 4 star-images displaying', async () => {
-      render(
-        <Provider store={store}>
-          <MemoryRouter>
-            <Trending />
-          </MemoryRouter>
-        </Provider>
-      );
-      const starImages = await screen.findAllByRole('img', { name: 'star image' });
-      expect(starImages).toHaveLength(4);
-
-    });
-    it('should open the nav>Favorites(0)>ClickStar>OpenNav>Favorites(1) ', async () => {
-      render(
-        <Provider store={store}>
-          <MemoryRouter>
-            <HomeView />
-          </MemoryRouter>
-        </Provider>
-      );
-        const navButton = await screen.findByTestId('navigation')
-        await userEvent.click(navButton);
-        const favorites = await screen.findByTestId('favorite-number')
-        expect(favorites).toHaveTextContent('0')
-        const starButton = await screen.findAllByRole('img', {name: 'star image'})
-        await userEvent.click(starButton[0])
-        await userEvent.click(navButton)
-        screen.debug()
-        expect(await screen.findByTestId('favorite-number')).toHaveTextContent('1')
-      
-    });
+    );
   });
 
+  it('should be 4 star-images displaying', async () => {
+    render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <Trending />
+        </MemoryRouter>
+      </Provider>
+    );
+    const starImages = await screen.findAllByRole('img', {
+      name: 'star image',
+    });
+    expect(starImages).toHaveLength(4);
+  });
+  it('should open the nav>Favorites(0)>ClickStar>OpenNav>Favorites(1) ', async () => {
+    render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <HomeView />
+        </MemoryRouter>
+      </Provider>
+    );
+    const navButton = await screen.findByTestId('navigation');
+    await userEvent.click(navButton);
+    const favorites = await screen.findByTestId('favorite-number');
+    expect(favorites).toHaveTextContent('0');
+    const starButton = await screen.findAllByRole('img', {
+      name: 'star image',
+    });
+    await userEvent.click(starButton[0]);
+    await userEvent.click(navButton);
+    screen.debug();
+    expect(await screen.findByTestId('favorite-number')).toHaveTextContent('1');
+  });
+});

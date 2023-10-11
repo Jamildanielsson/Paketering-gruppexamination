@@ -1,16 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import Searchbar from './Searchbar';
 import userEvent from '@testing-library/user-event';
-import { afterEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore } from '../../redux/store';
 import HomeView from '../../views/HomeView/HomeView';
 import MovieView from '../../views/MovieView/MovieView';
 
-
-let store = createStore();
-afterEach(() => {
+let store: TStore;
+beforeEach(() => {
   store = createStore();
 });
 
@@ -50,10 +49,9 @@ describe('SearchBar', () => {
     const input = screen.getByRole('textbox');
 
     await user.type(input, 'the godfather:');
-    await user.click(screen.getByTestId('searchResultLi'))
+    await user.click(screen.getByTestId('searchResultLi'));
     expect(
       await screen.findByText('Add to Favorites', { exact: false })
-    ).toBeInTheDocument()
-
+    ).toBeInTheDocument();
   });
 });

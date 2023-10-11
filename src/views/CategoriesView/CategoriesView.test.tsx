@@ -7,10 +7,9 @@ import userEvent from '@testing-library/user-event';
 import MovieView from '../MovieView/MovieView';
 import HomeView from '../HomeView/HomeView';
 import FavoritesView from '../FavoritesView/FavoritesView';
-import { AppDispatch, RootState, createStore } from '../../redux/store';
-import { AnyAction, Store } from '@reduxjs/toolkit';
+import { createStore } from '../../redux/store';
 
-let store: Store<RootState, AnyAction> & { dispatch: AppDispatch };
+let store: TStore;
 beforeEach(() => {
   store = createStore();
 });

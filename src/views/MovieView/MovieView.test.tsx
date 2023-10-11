@@ -1,13 +1,13 @@
 import { render } from '@testing-library/react';
-import { afterEach, describe, it } from 'vitest';
+import { beforeEach, describe, it } from 'vitest';
 import { Provider } from 'react-redux';
 import { createStore } from '../../redux/store';
 import HomeView from '../HomeView/HomeView';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import MovieView from './MovieView';
 
-let store = createStore();
-afterEach(() => {
+let store: TStore;
+beforeEach(() => {
   store = createStore();
 });
 

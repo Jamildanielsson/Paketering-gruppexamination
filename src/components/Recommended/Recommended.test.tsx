@@ -4,13 +4,12 @@ import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
 import Recommended from './Recommended';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
-import { AppDispatch, RootState, createStore } from '../../redux/store';
-import { AnyAction, Store } from '@reduxjs/toolkit';
+import { createStore } from '../../redux/store';
 import userEvent from '@testing-library/user-event';
 import HomeView from '../../views/HomeView/HomeView';
 import MovieView from '../../views/MovieView/MovieView';
 
-let store: Store<RootState, AnyAction> & { dispatch: AppDispatch };
+let store: TStore;
 beforeEach(() => {
   store = createStore();
 });
@@ -31,8 +30,7 @@ describe('Recommended', () => {
   it('should display the movie view when a thumbnail is pressed ', async () => {
     render(
       <Provider store={store}>
-        <MemoryRouter
-          initialEntries={['/Paketering-gruppexamination/']}>
+        <MemoryRouter initialEntries={['/Paketering-gruppexamination/']}>
           <Routes>
             <Route
               path='/Paketering-gruppexamination'
@@ -52,7 +50,6 @@ describe('Recommended', () => {
     expect(
       await screen.findByText('Add to Favorites', { exact: false })
     ).toBeInTheDocument();
-
   });
 
   it('should display a "filled" star on the first star-image after click', async () => {
@@ -71,25 +68,24 @@ describe('Recommended', () => {
       '/Paketering-gruppexamination/src/assets/images/favourite-filled.png'
     );
   });
-    it('should be 4 star-images displaying', async () => {
-      render(
-        <Provider store={store}>
-          <MemoryRouter>
-            <Recommended />
-          </MemoryRouter>
-        </Provider>
-      );
-      const starImages = await screen.findAllByRole('img', {
-        name: 'star image',
-      });
-
-      expect(starImages).toHaveLength(4);
+  it('should be 4 star-images displaying', async () => {
+    render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <Recommended />
+        </MemoryRouter>
+      </Provider>
+    );
+    const starImages = await screen.findAllByRole('img', {
+      name: 'star image',
     });
-    it('should open the nav>Favorites(0)>ClickStar>OpenNav>Favorites(1) ', async () => {
-      render(
-        <Provider store={store}>
-        <MemoryRouter
-          initialEntries={['/Paketering-gruppexamination/']}>
+
+    expect(starImages).toHaveLength(4);
+  });
+  it('should open the nav>Favorites(0)>ClickStar>OpenNav>Favorites(1) ', async () => {
+    render(
+      <Provider store={store}>
+        <MemoryRouter initialEntries={['/Paketering-gruppexamination/']}>
           <Routes>
             <Route
               path='/Paketering-gruppexamination'
@@ -102,33 +98,38 @@ describe('Recommended', () => {
           </Routes>
         </MemoryRouter>
       </Provider>
-      );
-        const navButton = await screen.findByTestId('navigation')
-        await userEvent.click(navButton);
-        const favorites = await screen.findByTestId('favorite-number')
-        expect(favorites).toHaveTextContent('0')
-        const movieImage = await screen.findAllByAltText('movie thumbnail');
-        await userEvent.click(movieImage[7])
-        expect(await screen.findByText('Over the course of several years', {exact: false})).toBeInTheDocument()
-
+    );
+    const navButton = await screen.findByTestId('navigation');
+    await userEvent.click(navButton);
+    const favorites = await screen.findByTestId('favorite-number');
+    expect(favorites).toHaveTextContent('0');
+    const movieImage = await screen.findAllByAltText('movie thumbnail');
+    await userEvent.click(movieImage[7]);
+    expect(
+      await screen.findByText('Over the course of several years', {
+        exact: false,
+      })
+    ).toBeInTheDocument();
+  });
+  it('should open the nav>Favorites(0)>ClickStar>OpenNav>Favorites(1) ', async () => {
+    // Här måste vi rendera ut hela homeview för att även kunna testa att funktionaliteten mellan Recommended och Navbar fungerar.
+    render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <HomeView />
+        </MemoryRouter>
+      </Provider>
+    );
+    const navButton = await screen.findByTestId('navigation');
+    await userEvent.click(navButton);
+    const favorites = await screen.findByTestId('favorite-number');
+    expect(favorites).toHaveTextContent('0');
+    const starButton = await screen.findAllByRole('img', {
+      name: 'star image',
     });
-    it('should open the nav>Favorites(0)>ClickStar>OpenNav>Favorites(1) ', async () => {
-      // Här måste vi rendera ut hela homeview för att även kunna testa att funktionaliteten mellan Recommended och Navbar fungerar.
-      render(
-        <Provider store={store}>
-          <MemoryRouter>
-            <HomeView />
-          </MemoryRouter>
-        </Provider>
-      );
-        const navButton = await screen.findByTestId('navigation')
-        await userEvent.click(navButton);
-        const favorites = await screen.findByTestId('favorite-number')
-        expect(favorites).toHaveTextContent('0')
-        const starButton = await screen.findAllByRole('img', {name: 'star image'})
-        await userEvent.click(starButton[7])
-        await userEvent.click(navButton)
-        screen.debug()
-        expect(await screen.findByTestId('favorite-number')).toHaveTextContent('1')
-    });
+    await userEvent.click(starButton[7]);
+    await userEvent.click(navButton);
+    screen.debug();
+    expect(await screen.findByTestId('favorite-number')).toHaveTextContent('1');
+  });
 });
