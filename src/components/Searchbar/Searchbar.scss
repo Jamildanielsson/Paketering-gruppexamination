@@ -36,7 +36,7 @@ input:focus {
 }
 
 .searchResults li:hover {
-  background-color: rgb(25, 25, 25);
+  background-color: rgb(31, 31, 31);
   border-radius: 2px;
 }
 
@@ -48,7 +48,7 @@ input:focus {
 
 .searchResults {
   z-index: 999;
-  background-color: $black;
+  background-color: rgb(20, 20, 20);
   color: white;
   position: absolute;
   width: 70%;
