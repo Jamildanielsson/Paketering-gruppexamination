@@ -83,35 +83,6 @@ describe('Recommended', () => {
     expect(starImages).toHaveLength(4);
   });
   it('should open the nav>Favorites(0)>ClickStar>OpenNav>Favorites(1) ', async () => {
-    render(
-      <Provider store={store}>
-        <MemoryRouter initialEntries={['/Paketering-gruppexamination/']}>
-          <Routes>
-            <Route
-              path='/Paketering-gruppexamination'
-              element={<HomeView />}
-            ></Route>
-            <Route
-              path='/Paketering-gruppexamination/movieview'
-              element={<MovieView />}
-            ></Route>
-          </Routes>
-        </MemoryRouter>
-      </Provider>
-    );
-    const navButton = await screen.findByTestId('navigation');
-    await userEvent.click(navButton);
-    const favorites = await screen.findByTestId('favorite-number');
-    expect(favorites).toHaveTextContent('0');
-    const movieImage = await screen.findAllByAltText('movie thumbnail');
-    await userEvent.click(movieImage[7]);
-    expect(
-      await screen.findByText('Over the course of several years', {
-        exact: false,
-      })
-    ).toBeInTheDocument();
-  });
-  it('should open the nav>Favorites(0)>ClickStar>OpenNav>Favorites(1) ', async () => {
     // Här måste vi rendera ut hela homeview för att även kunna testa att funktionaliteten mellan Recommended och Navbar fungerar.
     render(
       <Provider store={store}>

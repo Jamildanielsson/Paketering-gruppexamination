@@ -83,7 +83,7 @@ describe('Trending', () => {
     });
     expect(starImages).toHaveLength(4);
   });
-  it('should open the nav>Favorites(0)>ClickStar>OpenNav>Favorites(1) ', async () => {
+  it('should add movies to favorites when the star button is pressed.', async () => {
     render(
       <Provider store={store}>
         <MemoryRouter>
@@ -100,7 +100,6 @@ describe('Trending', () => {
     });
     await userEvent.click(starButton[0]);
     await userEvent.click(navButton);
-    screen.debug();
     expect(await screen.findByTestId('favorite-number')).toHaveTextContent('1');
   });
 });
