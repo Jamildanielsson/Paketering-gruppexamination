@@ -14,7 +14,8 @@ let store: Store<RootState, AnyAction> & { dispatch: AppDispatch };
 beforeEach(() => {
   store = createStore();
 });
-describe(Trending, () => {
+
+describe('Trending', () => {
   it('should display 8 image-elements', () => {
     render(
       <Provider store={store}>
@@ -52,7 +53,7 @@ describe(Trending, () => {
     const movieImage = await screen.findAllByAltText('movie thumbnail');
     await userEvent.click(movieImage[0]);
     expect(
-      await screen.findByText('1974', { exact: false })
+      await screen.findByText('Add to Favorites', { exact: false })
     ).toBeInTheDocument();
   });
 
@@ -70,9 +71,21 @@ describe(Trending, () => {
     expect(starEmpty[0]).toHaveAttribute(
       'src',
       '/Paketering-gruppexamination/src/assets/images/favourite-filled.png'
-    );
+  );})
 
-    it('should be 36 star-images displaying', async () => {
+    it('should be 4 star-images displaying', async () => {
+      render(
+        <Provider store={store}>
+          <MemoryRouter>
+            <Trending />
+          </MemoryRouter>
+        </Provider>
+      );
+      const starImages = await screen.findAllByRole('img', { name: 'star image' });
+      expect(starImages).toHaveLength(4);
+
+    });
+    it('should open the nav>Favorites(0)>ClickStar>OpenNav>Favorites(1) ', async () => {
       render(
         <Provider store={store}>
           <MemoryRouter>
@@ -80,14 +93,16 @@ describe(Trending, () => {
           </MemoryRouter>
         </Provider>
       );
-      const starImages = await screen.findAllByRole('img', {
-        name: 'star image',
-      });
-
-      expect(starImages).toHaveLength(36);
+        const navButton = await screen.findByTestId('navigation')
+        await userEvent.click(navButton);
+        const favorites = await screen.findByTestId('favorite-number')
+        expect(favorites).toHaveTextContent('0')
+        const starButton = await screen.findAllByRole('img', {name: 'star image'})
+        await userEvent.click(starButton[0])
+        await userEvent.click(navButton)
+        screen.debug()
+        expect(await screen.findByTestId('favorite-number')).toHaveTextContent('1')
+      
     });
-
-    
   });
 
-});
